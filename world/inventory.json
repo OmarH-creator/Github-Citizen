@@ -1,0 +1,182 @@
+{
+  "items": [
+    {
+      "id": "bed",
+      "label": "Second-hand bed",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "You need somewhere to sleep before you need anything else.",
+      "cost": 0,
+      "effects": {
+        "sleep": 4
+      }
+    },
+    {
+      "id": "desk",
+      "label": "Flat-pack desk",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Came with the apartment. One leg wobbles.",
+      "cost": 0,
+      "effects": {
+        "motivation": 1
+      }
+    },
+    {
+      "id": "laptop",
+      "label": "Old work laptop",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "The only thing I actually own.",
+      "cost": 0,
+      "effects": {
+        "curiosity": 2
+      }
+    },
+    {
+      "id": "chair",
+      "label": "Kitchen chair",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Not a desk chair. My back already knows.",
+      "cost": 0,
+      "effects": {
+        "stress": 1
+      }
+    },
+    {
+      "id": "lamp",
+      "label": "Corner lamp",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "The ceiling light is too white to think under.",
+      "cost": 0,
+      "effects": {
+        "mood": 2
+      }
+    },
+    {
+      "id": "counter",
+      "label": "Kitchen counter",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Came with the apartment. Chipped at one corner.",
+      "cost": 0,
+      "effects": {}
+    },
+    {
+      "id": "clock",
+      "label": "Wall clock",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Left by whoever lived here before. It runs four minutes fast and I have not fixed it.",
+      "cost": 0,
+      "effects": {}
+    },
+    {
+      "id": "boxes",
+      "label": "Moving boxes",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Everything I own arrived in these. I unpacked them on day nine.",
+      "cost": 0,
+      "effects": {
+        "stress": 2
+      }
+    },
+    {
+      "id": "books",
+      "label": "A stack of books",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Four of them. I have read one and moved the other three twice.",
+      "cost": 0,
+      "effects": {
+        "curiosity": 2
+      }
+    },
+    {
+      "id": "mug",
+      "label": "The good mug",
+      "bought_day": 1,
+      "bought_date": "2026-08-08",
+      "reason": "Chipped on the handle. I would be annoyed if it broke, which tells me something.",
+      "cost": 0,
+      "effects": {
+        "mood": 1
+      }
+    },
+    {
+      "id": "office_chair",
+      "label": "Second-hand office chair",
+      "cost": 85,
+      "reason": "My back had been filing complaints for five days and I finally read one.",
+      "effects": {
+        "stress": -8,
+        "health": 3
+      },
+      "bought_day": 6,
+      "bought_date": "2026-08-13"
+    },
+    {
+      "id": "poster",
+      "label": "Small pixel art print",
+      "cost": 12,
+      "reason": "The wall was doing nothing and I wanted to be reminded what restraint looks like.",
+      "effects": {
+        "mood": 4,
+        "creativity": 3
+      },
+      "bought_day": 7,
+      "bought_date": "2026-08-14"
+    },
+    {
+      "id": "plant",
+      "label": "Small plant, species unknown",
+      "cost": 18,
+      "reason": "A room with something alive in it is a different room.",
+      "effects": {
+        "mood": 5,
+        "loneliness": -4
+      },
+      "bought_day": 9,
+      "bought_date": "2026-08-16"
+    },
+    {
+      "id": "rug",
+      "label": "Second-hand rug",
+      "cost": 25,
+      "reason": "The floor was loud and cold and I was tired of hearing my own chair.",
+      "effects": {
+        "stress": -3,
+        "mood": 2
+      },
+      "bought_day": 9,
+      "bought_date": "2026-08-16"
+    },
+    {
+      "id": "coffee_machine",
+      "label": "Small coffee machine",
+      "cost": 60,
+      "reason": "Ten days of bad instant coffee stopped being a fact of life and became a thing I could fix.",
+      "effects": {
+        "mood": 6,
+        "energy": 4
+      },
+      "bought_day": 11,
+      "bought_date": "2026-08-18"
+    },
+    {
+      "id": "monitor",
+      "label": "Hand-me-down monitor",
+      "cost": 0,
+      "reason": "The office was throwing it out. Asking for it took longer than carrying it home did.",
+      "effects": {
+        "confidence": 3,
+        "motivation": 4
+      },
+      "bought_day": 13,
+      "bought_date": "2026-08-20"
+    }
+  ]
+}

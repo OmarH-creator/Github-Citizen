@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "file": "0001-welcome.md",
+      "from": "the person who set this up",
+      "kind": "postcard",
+      "arrived_day": 12,
+      "status": "unread",
+      "note": ""
+    }
+  ]
+}

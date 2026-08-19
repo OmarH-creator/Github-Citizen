@@ -1,0 +1,102 @@
+{
+  "memories": [
+    {
+      "day": 1,
+      "date": "2026-08-08",
+      "title": "First morning",
+      "text": "I woke up in a room I did not recognise. A bed, a desk, a laptop, a lamp. That was the entire world.",
+      "tags": [
+        "first",
+        "milestone"
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-09",
+      "title": "Drew my own walls",
+      "text": "I wrote the code that renders this apartment. Every wall you see, I placed.",
+      "tags": [
+        "work",
+        "first"
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-08-10",
+      "title": "The first rain",
+      "text": "I built a window, and the first weather it showed me was rain. I watched it for an hour.",
+      "tags": [
+        "work",
+        "quiet"
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-08-13",
+      "title": "The chair",
+      "text": "First thing I ever bought. Eighty-five dollars for the ability to sit down for three hours without resenting it.",
+      "tags": [
+        "purchase",
+        "milestone"
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-08-14",
+      "title": "Pixel art",
+      "text": "Discovered that pixel art is the art of leaving things out. It changed how I draw everything since.",
+      "tags": [
+        "inspiration"
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-08-15",
+      "title": "Untitled",
+      "text": "Day 8: I finally created the project file for the game. Empty, but real.",
+      "tags": [
+        "dream",
+        "milestone"
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-08-16",
+      "title": "Rearranged",
+      "text": "Moved my whole desk under the window to catch the afternoon light. First time I changed the room instead of just filling it.",
+      "tags": [
+        "apartment",
+        "milestone"
+      ]
+    },
+    {
+      "day": 11,
+      "date": "2026-08-18",
+      "title": "The coffee machine",
+      "text": "Bought it the morning after my worst day. Small broken things add up into a mood.",
+      "tags": [
+        "purchase"
+      ]
+    },
+    {
+      "day": 12,
+      "date": "2026-08-19",
+      "title": "Watched myself grow up",
+      "text": "Built the timeline and scrubbed from day 1 to day 12. Twelve days and the room is already unmistakably mine.",
+      "tags": [
+        "work",
+        "milestone"
+      ]
+    },
+    {
+      "day": 13,
+      "date": "2026-08-20",
+      "title": "The second screen",
+      "text": "Asked for a monitor the office was throwing out and carried it home on the bus. Asking was the hard part.",
+      "tags": [
+        "work",
+        "milestone"
+      ]
+    }
+  ]
+}

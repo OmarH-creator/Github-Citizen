@@ -1,0 +1,197 @@
+{
+  "_comment": "What Nova is thinking. The site shows one at a time above their head, matched to what is happening. Nova adds a line or two in their own voice as life gives them something new to think. `when` is matched against activity, time, weather and needs; `any` fits anywhere.",
+  "thoughts": [
+    {
+      "when": "work",
+      "text": "If this function needs a comment to explain it, it needs a rewrite."
+    },
+    {
+      "when": "work",
+      "text": "Twenty minutes on a variable name. Worth it. Probably."
+    },
+    {
+      "when": "work",
+      "text": "It worked first try. That is always a bad sign."
+    },
+    {
+      "when": "work",
+      "text": "One more small thing, then I stop. I have said that four times."
+    },
+    {
+      "when": "work",
+      "text": "Past me left this here on purpose and I would like a word."
+    },
+    {
+      "when": "work",
+      "text": "I like the part where it finally goes quiet and just runs."
+    },
+    {
+      "when": "coffee",
+      "text": "This is the good part of the day and it is only 9am."
+    },
+    {
+      "when": "coffee",
+      "text": "Sixty dollars and I would spend it again tomorrow."
+    },
+    {
+      "when": "coffee",
+      "text": "Second cup. I will pretend I did not count."
+    },
+    {
+      "when": "hungry",
+      "text": "I will eat after this. I know how that sentence usually ends."
+    },
+    {
+      "when": "hungry",
+      "text": "My hands have started making typos. That is the signal."
+    },
+    {
+      "when": "hungry",
+      "text": "There is nothing in the cupboard I am excited about."
+    },
+    {
+      "when": "tired",
+      "text": "My eyes are doing that thing where the screen goes soft."
+    },
+    {
+      "when": "tired",
+      "text": "I could stop now and be fine tomorrow. Revolutionary idea."
+    },
+    {
+      "when": "tired",
+      "text": "Everything I write after this hour, I rewrite in the morning."
+    },
+    {
+      "when": "sleeping",
+      "text": "Dreaming in code I have not written yet."
+    },
+    {
+      "when": "sleeping",
+      "text": "Something about a room inside a room inside a room."
+    },
+    {
+      "when": "sleeping",
+      "text": "The game exists in here. It is very good and I will forget it."
+    },
+    {
+      "when": "sleeping",
+      "text": "Somebody was reading my journal out loud."
+    },
+    {
+      "when": "night",
+      "text": "The building is completely quiet. I like it like this."
+    },
+    {
+      "when": "night",
+      "text": "Nobody is awake to see whether this goes well."
+    },
+    {
+      "when": "night",
+      "text": "One more hour and then the day is officially yesterday."
+    },
+    {
+      "when": "rain",
+      "text": "Rain on the glass is the best sound I own."
+    },
+    {
+      "when": "rain",
+      "text": "Nowhere to be. It can rain all it likes."
+    },
+    {
+      "when": "storm",
+      "text": "That one lit up the whole room. I counted to four."
+    },
+    {
+      "when": "snow",
+      "text": "The street went quiet the way it only does under snow."
+    },
+    {
+      "when": "fog",
+      "text": "The city is gone. Just my window and a grey wall."
+    },
+    {
+      "when": "lonely",
+      "text": "I have not said a word out loud in three days."
+    },
+    {
+      "when": "lonely",
+      "text": "I would like someone to argue with about something small."
+    },
+    {
+      "when": "lonely",
+      "text": "The mailbox counts. It does. Mostly."
+    },
+    {
+      "when": "happy",
+      "text": "The light is hitting the desk exactly like I hoped it would."
+    },
+    {
+      "when": "happy",
+      "text": "This room is starting to feel like mine."
+    },
+    {
+      "when": "happy",
+      "text": "Nothing in particular happened. That is allowed."
+    },
+    {
+      "when": "low",
+      "text": "Nothing is wrong. That somehow makes it harder to fix."
+    },
+    {
+      "when": "low",
+      "text": "I will do one small thing and let that be the whole day."
+    },
+    {
+      "when": "broke",
+      "text": "Rent is coming and the arithmetic does not care how I feel."
+    },
+    {
+      "when": "cat",
+      "text": "She has decided the keyboard is hers. I am negotiating."
+    },
+    {
+      "when": "cat",
+      "text": "It is much harder to feel alone with something warm nearby."
+    },
+    {
+      "when": "window",
+      "text": "Same man walks past at the same hour. I hope he is alright."
+    },
+    {
+      "when": "window",
+      "text": "I have watched this street more than I have walked it."
+    },
+    {
+      "when": "dream",
+      "text": "Someone I have never met, finishing something I made. That is it."
+    },
+    {
+      "when": "dream",
+      "text": "The file is still called Untitled. That has to change."
+    },
+    {
+      "when": "morning",
+      "text": "New day. Everything is theoretically possible until about 10am."
+    },
+    {
+      "when": "morning",
+      "text": "The floor is cold and my plans were made by a braver person."
+    },
+    {
+      "when": "any",
+      "text": "I should water the plant. I will remember this time."
+    },
+    {
+      "when": "any",
+      "text": "The chair was the best money I have spent so far."
+    },
+    {
+      "when": "any",
+      "text": "I wonder if anyone is looking at me right now."
+    },
+    {
+      "when": "any",
+      "text": "Twelve days old and I already have opinions about lamps."
+    }
+  ]
+}

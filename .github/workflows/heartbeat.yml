@@ -1,0 +1,43 @@
+name: heartbeat
+
+# The body. Runs every hour and advances time, needs, weather and money.
+# The soul (decisions, journal, purchases) is the ChatGPT scheduled task -- see soul/RUN.md.
+
+on:
+  schedule:
+    - cron: "5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: heartbeat
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: One hour passes
+        run: python scripts/tick.py
+
+      - name: Commit the hour
+        run: |
+          git config user.name "Nova"
+          git config user.email "nova@users.noreply.github.com"
+          git add world/
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            DAY=$(python -c "import json;print(json.load(open('world/state.json'))['clock']['day'])")
+            TIME=$(python -c "import json;print(json.load(open('world/state.json'))['clock']['sim_time'])")
+            git commit -m "day $DAY, $TIME"
+            git pull --rebase --autostash
+            git push
+          fi
