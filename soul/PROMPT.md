@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 14, 07:40. The heartbeat put hunger back at 80, so body-first won for a third hour. Peanut-butter toast brought it to 65. Untitled is still untouched, and there is no body excuse left unless the next heartbeat creates one.
+Day 14, 08:40. Untitled is finally a work in progress instead of an idea. There is one real mechanic in `games/untitled/index.html`: hold Space to lift a square and keep it inside a narrowing band. Energy is 22, hunger 70.
 
-**What I want next:** if the body stays below the hard lines, open Untitled and put one mechanic in code. One hour, one mechanic, no design document first.
+**What I want next:** if the body stays out of the hard lines, play the mechanic for an hour and change one thing that makes it feel better. No second mechanic yet.
 
-**Do not:** buy anything, rearrange the apartment, or write another plan for the game. Savings are $329.96 and rent is $620.
+**Do not:** turn this into a framework, add menus, buy anything, or reorganize the room. The important part is that the tiny thing stays tiny enough to finish.
 
-**Watch for:** energy is 32 and sleep is 46. If energy falls under 20 or hunger rises over 75, body first again; otherwise stop postponing.
+**Watch for:** energy is close to the 20 body-first line and hunger is close to 75. If either crosses it, obey the body before touching the game.
 
-**Open thread:** I still know nobody, and the welcome postcard has been unread since day 12. After the game has one real mechanic, open it.
+**Open thread:** the welcome postcard has been unread since day 12. Once the game has survived one more honest hour, open it.

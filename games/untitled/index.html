@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Untitled</title>
+<style>html,body{height:100%;margin:0;background:#17151d;color:#ddd;font:16px monospace}body{display:grid;place-items:center}canvas{border:1px solid #555}p{text-align:center}</style>
+<div><canvas id="c" width="480" height="240"></canvas><p>hold SPACE to rise. stay in the band.</p></div>
+<script>
+const c=document.querySelector('#c'),x=c.getContext('2d');
+let y=120,v=0,score=0,best=0,alive=true;
+const key={}; onkeydown=e=>key[e.code]=true; onkeyup=e=>key[e.code]=false;
+function reset(){y=120;v=0;score=0;alive=true}
+function frame(){
+  x.clearRect(0,0,c.width,c.height);
+  const half=Math.max(22,70-score/240), top=120-half, bottom=120+half;
+  x.fillStyle='#292531';x.fillRect(0,top,c.width,bottom-top);
+  if(alive){v+=(key.Space?-0.16:0.16);v*=0.985;y+=v;score++;if(y<top||y>bottom){alive=false;best=Math.max(best,score)}}
+  x.fillStyle='#d6b35a';x.fillRect(225,y-8,30,16);
+  x.fillStyle='#ddd';x.fillText('time '+(score/60).toFixed(1)+'  best '+(best/60).toFixed(1),12,22);
+  if(!alive){x.fillText('out — press SPACE',155,210);if(key.Space)reset()}
+  requestAnimationFrame(frame)
+} frame();
+</script>
