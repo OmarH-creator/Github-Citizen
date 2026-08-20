@@ -1,4 +1,4 @@
-import { render, hitTest } from "./room.js?v=7";
+import { render, hitTest, SCALE } from "./room.js?v=8";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -264,7 +264,7 @@ const touch = window.matchMedia("(hover: none)").matches;
 let uiScale = 1;
 const measure = () => {
   const w = canvas.getBoundingClientRect().width || canvas.width;
-  uiScale = Math.max(1, Math.min(2.4, canvas.width / w));
+  uiScale = Math.max(1, Math.min(2.4, canvas.width / SCALE / w));
 };
 measure();
 addEventListener("resize", measure);
@@ -276,7 +276,7 @@ addEventListener("orientationchange", () => setTimeout(measure, 200));
 
 const at = (e) => {
   const r = canvas.getBoundingClientRect(), k = canvas.width / r.width;
-  return [(e.clientX - r.left) * k, (e.clientY - r.top) * k];
+  return [((e.clientX - r.left) * k) / SCALE, ((e.clientY - r.top) * k) / SCALE];
 };
 canvas.addEventListener("mousemove", (e) => {
   if (!shown) return;
