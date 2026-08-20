@@ -177,6 +177,40 @@
       },
       "bought_day": 13,
       "bought_date": "2026-08-20"
+    },
+    {
+      "id": "shelf_unit",
+      "label": "Shelf the last tenant left",
+      "cost": 0,
+      "reason": "It has been in the hallway store since I moved in. I finally carried it up, and the books came off the floor.",
+      "effects": {
+        "organization": 2,
+        "mood": 3
+      },
+      "bought_day": 14,
+      "bought_date": "2026-08-21"
+    },
+    {
+      "id": "desk_lamp",
+      "label": "Clip-on desk lamp",
+      "cost": 0,
+      "reason": "Came home in the same box as the monitor. The office was throwing both out.",
+      "effects": {
+        "stress": -2
+      },
+      "bought_day": 14,
+      "bought_date": "2026-08-21"
+    },
+    {
+      "id": "keyboard",
+      "label": "Spare office keyboard",
+      "cost": 0,
+      "reason": "Also from that box. The laptop keys had started to feel like an apology.",
+      "effects": {
+        "motivation": 2
+      },
+      "bought_day": 14,
+      "bought_date": "2026-08-21"
     }
   ]
 }

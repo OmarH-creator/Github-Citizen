@@ -67,20 +67,40 @@ function drawWindow(g, t, st) {
     }
   }
 
-  // skyline, with windows that light up in the evening
-  g.fillStyle = rgb(c1, 0.5);
-  for (let i = 0; i < 10; i++) g.fillRect(x + i * 17, y + h - (18 + ((i * 29) % 38)) - 16, 14, 60);
-  if (hour < 7 || hour > 17) {
-    g.fillStyle = "#d8c9a8";
-    for (let i = 0; i < 10; i++)
-      for (let j = 0; j < 3; j++)
-        if ((i * 7 + j * 3) % 4 === 0) {
-          g.globalAlpha = 0.55 + 0.35 * Math.sin(t / 3000 + i * 2 + j);
-          g.fillRect(x + i * 17 + 4, y + h - 26 - j * 11, 4, 5);
-        }
-    g.globalAlpha = 1;
+  // skyline: towers of different widths and heights, each with its own lit windows
+  const night = hour < 7 || hour >= 19;
+  const towers = [[0, 34, 15], [15, 52, 12], [27, 26, 18], [45, 44, 14], [59, 62, 16],
+                  [75, 30, 13], [88, 48, 17], [105, 36, 12], [117, 58, 15], [132, 28, 16]];
+  for (const [tx, th, tw] of towers) {
+    const bx = x + tx * (w / 148);
+    const bw2 = tw * (w / 148);
+    g.fillStyle = rgb(c1, night ? 0.34 : 0.52);
+    g.fillRect(bx, y + h - 16 - th, bw2, th + 16);
+    g.fillStyle = rgb(c1, night ? 0.26 : 0.44);
+    g.fillRect(bx, y + h - 16 - th, bw2 * 0.3, th + 16);
+    for (let r = 0; r < Math.floor(th / 9); r++) {
+      for (let cN = 0; cN < Math.max(1, Math.floor(bw2 / 6)); cN++) {
+        const seed = (tx * 7 + r * 13 + cN * 29) % 10;
+        const lit = night ? seed > 3 : seed > 8;
+        if (!lit) continue;
+        g.fillStyle = night
+          ? `rgba(255,226,150,${0.5 + 0.45 * Math.abs(Math.sin(t / 4000 + seed * 2))})`
+          : "rgba(255,255,255,.18)";
+        g.fillRect(bx + 2 + cN * 6, y + h - 22 - r * 9, 3, 4);
+      }
+    }
+    if (th > 50) {                                   // antenna with a blinking light
+      g.fillStyle = rgb(c1, 0.3);
+      g.fillRect(bx + bw2 / 2 - 1, y + h - 16 - th - 9, 2, 9);
+      if (night && Math.sin(t / 700) > 0.4) {
+        g.fillStyle = "#e2585f";
+        g.fillRect(bx + bw2 / 2 - 2, y + h - 16 - th - 12, 4, 4);
+      }
+    }
   }
-  g.fillStyle = "#26221c"; g.fillRect(x, y + h - 16, w, 16);
+  g.fillStyle = "#241f1a"; g.fillRect(x, y + h - 16, w, 16);          // street
+  g.fillStyle = night ? "rgba(255,214,140,.22)" : "rgba(255,255,255,.06)";
+  for (let i = 0; i < 4; i++) g.fillRect(x + 10 + i * 40, y + h - 16, 14, 16);
   if (st.clock.weather === "snow") { g.fillStyle = "#e8ecf2"; g.fillRect(x, y + h - 18, w, 5); }
 
   if (wet) {
@@ -134,62 +154,110 @@ function drawWindow(g, t, st) {
 function drawArchitecture(g, st, t, light) {
   const wall = st.apartment.wall;
 
-  // door, on the left of the back wall
-  const dx = 0.6 * T, dy = 1.4 * T, dw = 2.2 * T, dh = FLOOR_Y - dy;
-  g.fillStyle = rgb(wall, 0.55); g.fillRect(dx - 5, dy - 5, dw + 10, dh + 5);
+  // --- front door, on the left ---
+  const dx = 0.5 * T, dy = 1.3 * T, dw = 2.3 * T, dh = FLOOR_Y - dy;
+  g.fillStyle = rgb(wall, 0.5); g.fillRect(dx - 6, dy - 6, dw + 12, dh + 6);
   g.fillStyle = "#6b4f38"; g.fillRect(dx, dy, dw, dh);
   g.fillStyle = "#5b4230";
-  g.fillRect(dx + 6, dy + 10, dw - 12, dh * 0.36);
-  g.fillRect(dx + 6, dy + dh * 0.5, dw - 12, dh * 0.36);
-  g.fillStyle = "#d8c48a"; g.beginPath();
-  g.arc(dx + dw - 12, dy + dh * 0.52, 3.5, 0, 7); g.fill();
+  g.fillRect(dx + 7, dy + 11, dw - 14, dh * 0.35);
+  g.fillRect(dx + 7, dy + dh * 0.5, dw - 14, dh * 0.35);
+  g.fillStyle = "#7d5c40";
+  g.fillRect(dx + 7, dy + 11, dw - 14, 3); g.fillRect(dx + 7, dy + dh * 0.5, dw - 14, 3);
+  g.fillStyle = "#e0c98d"; g.beginPath();
+  g.arc(dx + dw - 13, dy + dh * 0.52, 4, 0, 7); g.fill();
 
-  // coat hook by the door, with a jacket on it
-  g.fillStyle = "#4a4450"; g.fillRect(dx + dw + 12, 2.2 * T, 16, 3);
-  g.fillStyle = "#3f5d7a";
-  g.beginPath(); g.moveTo(dx + dw + 14, 2.3 * T);
-  g.lineTo(dx + dw + 28, 2.3 * T); g.lineTo(dx + dw + 31, 3.9 * T);
-  g.lineTo(dx + dw + 11, 3.9 * T); g.closePath(); g.fill();
-  g.fillStyle = "#35506a"; g.fillRect(dx + dw + 19, 2.3 * T, 4, 1.6 * T);
+  // --- bathroom door, narrower, on the right ---
+  const bx2 = 3.35 * T, bw2 = 1.85 * T;
+  g.fillStyle = rgb(wall, 0.5); g.fillRect(bx2 - 5, dy - 5, bw2 + 10, dh + 5);
+  g.fillStyle = "#63482f"; g.fillRect(bx2, dy, bw2, dh);
+  g.fillStyle = "#553e29"; g.fillRect(bx2 + 6, dy + 10, bw2 - 12, dh * 0.72);
+  g.fillStyle = "#e0c98d"; g.beginPath();
+  g.arc(bx2 + 12, dy + dh * 0.52, 3.5, 0, 7); g.fill();
+  g.fillStyle = "#cfc6b6"; g.fillRect(bx2 + bw2 * 0.32, dy + 14, bw2 * 0.36, 13);   // little sign
+  g.fillStyle = "#8a8290"; g.fillRect(bx2 + bw2 * 0.44, dy + 17, 4, 7);
 
-  // light switch
-  g.fillStyle = "#e6e2d8"; g.fillRect(dx + dw + 44, 3.1 * T, 9, 12);
-  g.fillStyle = "#b9b3a6"; g.fillRect(dx + dw + 46, 3.1 * T + 3, 5, 5);
+  g.fillStyle = "#e6e2d8"; g.fillRect(5.5 * T, 3.1 * T, 9, 12);                     // light switch
+  g.fillStyle = "#b9b3a6"; g.fillRect(5.5 * T + 2, 3.1 * T + 3, 5, 5);
 
-  // radiator under the window
-  const rx = WIN.x + 8, ry = FLOOR_Y - 46, rw = WIN.w - 16;
-  g.fillStyle = "#cdc7bd"; g.fillRect(rx, ry, rw, 38);
-  g.fillStyle = "#b7b0a5";
-  for (let i = 0; i < Math.floor(rw / 11); i++) g.fillRect(rx + 4 + i * 11, ry + 4, 6, 30);
-  g.fillStyle = "#9a948a"; g.fillRect(rx, ry, rw, 4); g.fillRect(rx, ry + 34, rw, 4);
+  // --- window sill, curtain and radiator ---
+  g.fillStyle = "#e8ddc8"; g.fillRect(WIN.x - 12, WIN.y + WIN.h + 8, WIN.w + 24, 7);
+  g.fillStyle = "#cfc3ad"; g.fillRect(WIN.x - 12, WIN.y + WIN.h + 15, WIN.w + 24, 3);
+  for (const side of [-1, 1]) {                                                      // curtains
+    const edge = side < 0 ? WIN.x : WIN.x + WIN.w;
+    for (let i = 0; i < 3; i++) {
+      const a = edge + side * (14 + i * 5), b = edge + side * (2 + i * 5);
+      g.beginPath();
+      g.moveTo(a, WIN.y - 10);
+      g.quadraticCurveTo(a - side * 6, WIN.y + WIN.h * 0.5, a + side * 2, WIN.y + WIN.h + 6);
+      g.lineTo(b, WIN.y + WIN.h + 6); g.lineTo(b, WIN.y - 10); g.closePath();
+      g.fillStyle = i % 2 ? "#4e6f8c" : "#446283"; g.fill();
+    }
+  }
+  g.fillStyle = "#3a3442"; g.fillRect(WIN.x - 26, WIN.y - 14, WIN.w + 52, 4);        // rail
 
-  // kitchen wall cabinets above the counter
-  const kx = 19 * T, kw = COLS * T - kx;
-  g.fillStyle = "#7b6a58"; g.fillRect(kx, 2.4 * T, kw, 2.4 * T);
-  g.fillStyle = "#8c7a66";
-  g.fillRect(kx + 4, 2.4 * T + 4, kw / 2 - 8, 2.4 * T - 8);
-  g.fillRect(kx + kw / 2 + 4, 2.4 * T + 4, kw / 2 - 8, 2.4 * T - 8);
+  const rx = WIN.x + 10, ry = FLOOR_Y - 44, rw = WIN.w - 20;
+  g.fillStyle = "#d5cfc5"; g.fillRect(rx, ry, rw, 36);
+  g.fillStyle = "#bdb6ab";
+  for (let i = 0; i < Math.floor(rw / 10); i++) g.fillRect(rx + 4 + i * 10, ry + 4, 5, 28);
+  g.fillStyle = "#a49d92"; g.fillRect(rx, ry, rw, 4); g.fillRect(rx, ry + 32, rw, 4);
+
+  // --- kitchen: cabinets, light strip, utensils, bin ---
+  const kx = 20.4 * T, kw = COLS * T - kx;
+  g.fillStyle = "#6f5b45"; g.fillRect(kx, 2.3 * T, kw, 2.5 * T);
+  g.fillStyle = "#846c52";
+  g.fillRect(kx + 5, 2.3 * T + 5, kw / 2 - 9, 2.5 * T - 10);
+  g.fillRect(kx + kw / 2 + 4, 2.3 * T + 5, kw / 2 - 9, 2.5 * T - 10);
+  g.fillStyle = "#785f47";
+  for (let i = 0; i < 6; i++) {                                                      // grain
+    g.fillRect(kx + 8 + (i % 3) * 18, 2.4 * T + (i % 2) * 30, 2, 34);
+  }
   g.fillStyle = "#d8cfc0";
-  g.fillRect(kx + kw / 2 - 14, 3.4 * T, 8, 3); g.fillRect(kx + kw / 2 + 8, 3.4 * T, 8, 3);
-  g.fillStyle = "rgba(0,0,0,.25)"; g.fillRect(kx, 4.8 * T, kw, 5);
+  g.fillRect(kx + kw / 2 - 16, 3.5 * T, 9, 3); g.fillRect(kx + kw / 2 + 9, 3.5 * T, 9, 3);
+  g.fillStyle = "rgba(0,0,0,.3)"; g.fillRect(kx, 4.8 * T, kw, 5);
+  g.fillStyle = light < 0.5 ? "#ffe9b0" : "#cfc6ae";                                 // under-cabinet strip
+  g.fillRect(kx + 6, 4.8 * T + 4, kw - 12, 3);
+  if (light < 0.5) {
+    const ug = g.createLinearGradient(0, 4.8 * T + 6, 0, 6.6 * T);
+    ug.addColorStop(0, `rgba(255,226,150,${0.3 * (1 - light)})`);
+    ug.addColorStop(1, "rgba(255,226,150,0)");
+    g.fillStyle = ug; g.fillRect(kx, 4.8 * T + 6, kw, 1.8 * T);
+  }
 
-  // power socket, because rooms have them
-  g.fillStyle = "#e6e2d8"; g.fillRect(16.2 * T, 6.2 * T, 12, 10);
+  const ux = 18.6 * T;                                                               // utensil rail
+  g.fillStyle = "#4a4450"; g.fillRect(ux, 4.4 * T, 1.6 * T, 3);
+  g.fillStyle = "#3a3640";
+  g.beginPath(); g.arc(ux + 12, 4.4 * T + 16, 9, 0, 7); g.fill();                    // pan
+  g.fillRect(ux + 18, 4.4 * T + 13, 12, 3);
+  g.fillStyle = "#8a6a48"; g.fillRect(ux + 34, 4.4 * T + 4, 7, 20);                  // board
+  g.fillStyle = "#b9bec4"; g.fillRect(ux + 46, 4.4 * T + 4, 4, 16);
+
+  g.fillStyle = "#9aa0a8"; g.fillRect(19.1 * T, FLOOR_Y - 4, 1.2 * T, 4);            // bin
+  g.fillStyle = "#8b919a"; g.fillRect(19.15 * T, 11.0 * T, 1.1 * T, 1.6 * T);
+  g.fillStyle = "#a8aeb6"; g.fillRect(19.1 * T, 10.85 * T, 1.2 * T, 8);
+  g.fillStyle = "#7d838b"; g.fillRect(19.45 * T, 10.9 * T, 12, 3);
+
+  // --- power socket ---
+  g.fillStyle = "#e6e2d8"; g.fillRect(15.3 * T, 6.2 * T, 12, 10);
   g.fillStyle = "#9a948a";
-  g.fillRect(16.4 * T, 6.2 * T + 3, 3, 3); g.fillRect(16.75 * T, 6.2 * T + 3, 3, 3);
+  g.fillRect(15.45 * T, 6.2 * T + 3, 3, 3); g.fillRect(15.75 * T, 6.2 * T + 3, 3, 3);
 
-  // ceiling lamp
+  // --- ceiling pendant ---
   const cx = 12.6 * T;
   g.strokeStyle = "#3a3442"; g.lineWidth = 2;
-  g.beginPath(); g.moveTo(cx, 0); g.lineTo(cx, 24); g.stroke();
-  g.fillStyle = light > 0.35 ? "#4a4450" : "#f6e3a4";
-  g.beginPath(); g.moveTo(cx - 16, 40); g.lineTo(cx + 16, 40);
-  g.lineTo(cx + 9, 24); g.lineTo(cx - 9, 24); g.closePath(); g.fill();
-  if (light < 0.35) {
-    const gl = g.createRadialGradient(cx, 44, 4, cx, 44, 190);
-    gl.addColorStop(0, `rgba(255,226,150,${0.3 * (1 - light)})`);
+  g.beginPath(); g.moveTo(cx, 0); g.lineTo(cx, 26); g.stroke();
+  const on = light < 0.42;
+  g.fillStyle = on ? "#f6e3a4" : "#4a4450";
+  g.beginPath(); g.moveTo(cx - 17, 42); g.lineTo(cx + 17, 42);
+  g.lineTo(cx + 9, 26); g.lineTo(cx - 9, 26); g.closePath(); g.fill();
+  g.fillStyle = on ? "#fff6d2" : "#5a5460";
+  g.fillRect(cx - 17, 40, 34, 3);
+  if (on) {
+    g.fillStyle = "#fffbe8"; g.beginPath(); g.arc(cx, 46, 5, 0, 7); g.fill();        // bulb
+    const gl = g.createRadialGradient(cx, 46, 5, cx, 46, 210);
+    gl.addColorStop(0, `rgba(255,226,150,${0.34 * (1 - light)})`);
+    gl.addColorStop(0.45, `rgba(255,214,140,${0.12 * (1 - light)})`);
     gl.addColorStop(1, "rgba(255,226,150,0)");
-    g.fillStyle = gl; g.beginPath(); g.arc(cx, 44, 190, 0, 7); g.fill();
+    g.fillStyle = gl; g.beginPath(); g.arc(cx, 46, 210, 0, 7); g.fill();
   }
 }
 
@@ -216,26 +284,40 @@ function codeLines(g, x, y, w, h, t, colour, seed) {
 // Each takes (g, x, y, w, h, o, t, st). y is the TOP of the object in pixels.
 const OBJ = {
   bed(g, x, y, w, h) {
-    // Geometry other code depends on: sheet from y+0.16h, duvet starts at x+0.32w.
-    g.fillStyle = "#4a3226"; g.fillRect(x, y + h * 0.55, w, h * 0.45);      // base
-    g.fillStyle = "#3e2a20"; g.fillRect(x - 3, y - 4, 6, h * 0.62);         // headboard
+    // Geometry other code depends on: sheet from y+0.16h, quilt starts at x+0.32w.
+    g.fillStyle = "#4a3226"; g.fillRect(x, y + h * 0.55, w, h * 0.45);
+    g.fillStyle = "#3a2620"; g.fillRect(x, y + h * 0.55, w, 5);
+    g.fillStyle = "#3e2a20"; g.fillRect(x - 4, y - 6, 7, h * 0.66);            // headboard
+    g.fillStyle = "#4f3628"; g.fillRect(x - 4, y - 6, 7, 5);
     g.fillStyle = "#6b4a33"; g.fillRect(x, y + h * 0.5, w, 7);
-    g.fillStyle = "#e6e3da"; g.fillRect(x + 3, y + h * 0.16, w - 6, h * 0.44);  // sheet
-    g.fillStyle = "#d5d1c6"; g.fillRect(x + 3, y + h * 0.56, w - 6, 4);
-    g.fillStyle = "#8fa9c6"; g.fillRect(x + w * 0.32, y + h * 0.2, w * 0.68 - 3, h * 0.4);
-    g.fillStyle = "#9db4cd"; g.fillRect(x + w * 0.32, y + h * 0.2, w * 0.68 - 3, 5);
-    g.fillStyle = "#7d96b3";
-    for (let i = 2; i < 5; i++) g.fillRect(x + i * (w / 5), y + h * 0.24, 2, h * 0.36);
-    g.fillStyle = "#f2eee3"; g.fillRect(x + 6, y + h * 0.08, w * 0.28, h * 0.26);   // pillow
+    g.fillStyle = "#ece8dd"; g.fillRect(x + 3, y + h * 0.16, w - 6, h * 0.44);  // sheet
+    g.fillStyle = "#dad5c8"; g.fillRect(x + 3, y + h * 0.56, w - 6, 4);
+
+    const qx = x + w * 0.32, qw = w * 0.68 - 3, qy = y + h * 0.2, qh = h * 0.4;
+    const quilt = ["#8fa9c6", "#c98a72", "#d9c187", "#7d96b3", "#a8899f"];
+    const cols = Math.max(3, Math.round(qw / 17)), rows = 3;
+    for (let r = 0; r < rows; r++)
+      for (let c = 0; c < cols; c++) {
+        g.fillStyle = quilt[(r * 3 + c * 2) % quilt.length];
+        g.fillRect(qx + c * (qw / cols), qy + r * (qh / rows), qw / cols - 1.5, qh / rows - 1.5);
+      }
+    g.fillStyle = "rgba(255,255,255,.14)"; g.fillRect(qx, qy, qw, 4);
+    g.fillStyle = "rgba(0,0,0,.16)"; g.fillRect(qx, qy + qh - 4, qw, 4);
+    g.fillStyle = "#f4f1e8"; g.fillRect(x + 6, y + h * 0.08, w * 0.28, h * 0.26);  // pillow
     g.fillStyle = "#e2ddd0"; g.fillRect(x + 9, y + h * 0.11, w * 0.2, h * 0.1);
   },
   desk(g, x, y, w, h) {
-    g.fillStyle = "#8a6540"; g.fillRect(x, y, w, 7);
-    g.fillStyle = "#6d4d2e"; g.fillRect(x, y + 7, w, 5);
-    g.fillStyle = "#5a3f26"; g.fillRect(x + 4, y + 12, 6, h - 12);
-    g.fillRect(x + w - 10, y + 12, 6, h - 12);
-    g.fillStyle = "#6d4d2e"; g.fillRect(x + w - 28, y + 12, 24, h * 0.55);
-    g.fillStyle = "#c8ac7e"; g.fillRect(x + w - 21, y + 12 + h * 0.24, 10, 3);
+    g.fillStyle = "#9c7448"; g.fillRect(x, y, w, 8);
+    g.fillStyle = "#b08655"; g.fillRect(x, y, w, 3);
+    g.fillStyle = "#75522f"; g.fillRect(x, y + 8, w, 6);
+    g.fillStyle = "#5f4228"; g.fillRect(x + 5, y + 14, 7, h - 14);
+    g.fillRect(x + w - 12, y + 14, 7, h - 14);
+    g.fillStyle = "#7c5734"; g.fillRect(x + w - 34, y + 14, 29, h * 0.6);
+    g.fillStyle = "#65462a"; g.fillRect(x + w - 32, y + 16, 25, h * 0.26);
+    g.fillRect(x + w - 32, y + 18 + h * 0.28, 25, h * 0.26);
+    g.fillStyle = "#d8bd8c";
+    g.fillRect(x + w - 26, y + 16 + h * 0.11, 12, 3);
+    g.fillRect(x + w - 26, y + 18 + h * 0.39, 12, 3);
   },
   chair(g, x, y, w, h) {
     g.fillStyle = "#7a5c3e"; g.fillRect(x + w * 0.15, y, w * 0.7, h * 0.55);
@@ -317,10 +399,21 @@ const OBJ = {
   },
   rug(g, x, y, w, h) {
     g.fillStyle = "#7d4148"; g.fillRect(x, y, w, h);
-    g.fillStyle = "#b87c66"; g.fillRect(x + 7, y + 6, w - 14, h - 12);
-    g.fillStyle = "#7d4148"; g.fillRect(x + 15, y + 12, w - 30, h - 24);
-    g.fillStyle = "#d3a184";
-    for (let i = 0; i < w; i += 10) { g.fillRect(x + i, y - 3, 5, 3); g.fillRect(x + i, y + h, 5, 3); }
+    g.fillStyle = "#8d4d52"; g.fillRect(x + 4, y + 3, w - 8, h - 6);
+    g.fillStyle = "#b87c66"; g.fillRect(x + 9, y + 7, w - 18, h - 14);
+    g.fillStyle = "#7d4148"; g.fillRect(x + 13, y + 10, w - 26, h - 20);
+    g.fillStyle = "#d3a184";                                   // centre diamond
+    g.beginPath();
+    g.moveTo(x + w / 2, y + 12); g.lineTo(x + w * 0.74, y + h / 2);
+    g.lineTo(x + w / 2, y + h - 12); g.lineTo(x + w * 0.26, y + h / 2);
+    g.closePath(); g.fill();
+    g.fillStyle = "#8d4d52";
+    g.beginPath();
+    g.moveTo(x + w / 2, y + 19); g.lineTo(x + w * 0.68, y + h / 2);
+    g.lineTo(x + w / 2, y + h - 19); g.lineTo(x + w * 0.32, y + h / 2);
+    g.closePath(); g.fill();
+    g.fillStyle = "#e0c39f";
+    for (let i = 4; i < w - 4; i += 9) { g.fillRect(x + i, y - 4, 4, 4); g.fillRect(x + i, y + h, 4, 4); }
   },
   books(g, x, y, w, h) {
     const cols = ["#c9585f", "#5a7fb5", "#d6a94a", "#6fbf73"];
@@ -455,6 +548,72 @@ const OBJ = {
     g.fillStyle = "#5f9e58";
     for (let i = 0; i < w / 7; i++) g.fillRect(x + 3 + i * 7, y + h - 20, 5, 11);
   },
+  shelf_unit(g, x, y, w, h) {
+    g.fillStyle = "#6d4d2e"; g.fillRect(x, y, w, h);
+    g.fillStyle = "#5a3f26"; g.fillRect(x, y, 5, h); g.fillRect(x + w - 5, y, 5, h);
+    const rows = 3, rh = h / rows;
+    for (let r = 0; r < rows; r++) {
+      const sy = y + (r + 1) * rh - 5;
+      g.fillStyle = "#7c5734"; g.fillRect(x, sy, w, 5);
+      g.fillStyle = "rgba(0,0,0,.22)"; g.fillRect(x + 5, sy - 4, w - 10, 4);
+      if (r === 0) {                                   // two framed pictures
+        g.fillStyle = "#3a2f38"; g.fillRect(x + 9, sy - 26, 22, 24);
+        g.fillStyle = "#8fb6d8"; g.fillRect(x + 12, sy - 23, 16, 18);
+        g.fillStyle = "#5f8f5a"; g.fillRect(x + 12, sy - 12, 16, 7);
+        g.fillStyle = "#3a2f38"; g.fillRect(x + 36, sy - 21, 19, 19);
+        g.fillStyle = "#e0b98a"; g.fillRect(x + 39, sy - 18, 13, 13);
+        g.fillStyle = "#a8759f"; g.fillRect(x + 39, sy - 10, 13, 5);
+      } else {                                          // books, and a trailing plant
+        const cols = ["#c9585f", "#5a7fb5", "#d6a94a", "#6fbf73", "#a877c4", "#e0b25c"];
+        for (let i = 0; i < Math.floor((w - 26) / 6); i++) {
+          const bh = 15 + ((i * 5 + r) % 6);
+          g.fillStyle = cols[(i * 3 + r) % cols.length];
+          g.fillRect(x + 8 + i * 6, sy - bh, 5, bh);
+          g.fillStyle = "rgba(255,255,255,.12)"; g.fillRect(x + 8 + i * 6, sy - bh, 5, 3);
+        }
+        g.fillStyle = "#a9663d"; g.fillRect(x + w - 20, sy - 12, 12, 12);
+        g.fillStyle = "#4e8f4a";
+        g.beginPath(); g.ellipse(x + w - 14, sy - 15, 8, 6, 0, 0, 7); g.fill();
+        g.fillStyle = "#5fa356";
+        g.beginPath(); g.ellipse(x + w - 20, sy - 10, 5, 3, 0.6, 0, 7); g.fill();
+      }
+    }
+  },
+  armchair(g, x, y, w, h) {
+    g.fillStyle = "#a8894f"; g.fillRect(x + 4, y, w - 8, h * 0.62);          // back
+    g.fillStyle = "#b8975a"; g.fillRect(x + 7, y + 4, w - 14, h * 0.5);
+    g.fillStyle = "#9a7c46"; g.fillRect(x, y + h * 0.3, 9, h * 0.42);        // arms
+    g.fillRect(x + w - 9, y + h * 0.3, 9, h * 0.42);
+    g.fillStyle = "#c3a165"; g.fillRect(x + 4, y + h * 0.55, w - 8, h * 0.2);
+    g.fillStyle = "#8a6d3d"; g.fillRect(x + 4, y + h * 0.72, w - 8, 6);
+    g.fillStyle = "#4a3a24";
+    g.fillRect(x + 8, y + h * 0.78, 6, h * 0.2); g.fillRect(x + w - 14, y + h * 0.78, 6, h * 0.2);
+  },
+  desk_lamp(g, x, y, w, h, o, t, st) {
+    const on = !st || daylight(st) < 0.55;
+    g.fillStyle = "#33303c"; g.fillRect(x + 2, y - 5, w - 4, 5);              // base on the desk
+    g.fillStyle = "#454252"; g.fillRect(x + 4, y - 7, w - 8, 3);
+    g.strokeStyle = "#5a5568"; g.lineWidth = 4;                                // arm
+    g.beginPath();
+    g.moveTo(x + w / 2, y - 6);
+    g.lineTo(x + w / 2 - 1, y - 24);
+    g.lineTo(x + w * 0.05, y - 33);
+    g.stroke();
+    g.fillStyle = "#6a6478";
+    g.beginPath(); g.arc(x + w / 2 - 1, y - 24, 3, 0, 7); g.fill();            // joint
+    g.fillStyle = on ? "#f6e3a4" : "#4a4450";                                  // shade
+    g.beginPath();
+    g.moveTo(x - w * 0.28, y - 40); g.lineTo(x + w * 0.36, y - 36);
+    g.lineTo(x + w * 0.26, y - 24); g.lineTo(x - w * 0.34, y - 28);
+    g.closePath(); g.fill();
+    g.fillStyle = on ? "#fff4cf" : "#565161";
+    g.fillRect(x - w * 0.33, y - 30, w * 0.6, 3);
+    if (on) {
+      const gl = g.createRadialGradient(x, y - 24, 3, x, y - 24, 70);
+      gl.addColorStop(0, "rgba(255,226,150,.32)"); gl.addColorStop(1, "rgba(255,226,150,0)");
+      g.fillStyle = gl; g.beginPath(); g.arc(x, y - 24, 70, 0, 7); g.fill();
+    }
+  },
   crate(g, x, y, w, h, o) {
     g.fillStyle = "#8a6a44"; g.fillRect(x, y, w, h);
     g.strokeStyle = "#5e4629"; g.lineWidth = 2; g.strokeRect(x + 3, y + 3, w - 6, h - 6);
@@ -512,60 +671,78 @@ function novaTarget(st) {
 
 let pos = null;                              // persists between frames so Nova can walk
 
+// The soul only decides once an hour. Left alone, Nova would stand in one spot the whole
+// time, which reads as frozen rather than alive. So between decisions they drift: a few
+// steps, a pause, a few steps back. It changes nothing in the world -- it is just fidgeting.
+function idleDrift(st, t) {
+  if (["desk", "bed", "outside"].includes(st.activity.location)) return 0;
+  const period = 11000;
+  const i = Math.floor(t / period), p = (t % period) / period;
+  const at = (n) => {                                 // a properly mixed hash: the plain
+    const h = Math.sin(n * 127.1 + 311.7) * 43758.5453;  // modulo version came out as a ramp,
+    return ((h - Math.floor(h)) - 0.5) * 2.6;            // so Nova crept one way and never back
+  };
+  const move = Math.min(1, p / 0.4);                                 // walk, then stand a while
+  return at(i) + (at(i + 1) - at(i)) * (move * move * (3 - 2 * move));
+}
+
 function drawSleeping(g, st, t, fit, bubbleVisible) {
   const bed = st.apartment.objects.find((o) => o.kind === "bed");
   if (!bed) return null;
   const bx = bed.x * T, by = bed.y * T, bw = (bed.w || 1) * T, bh = (bed.h || 1) * T;
-  const breath = Math.sin(t / 1900) * 1.4;
+  const breath = Math.sin(t / 2100) * 1.3;
 
-  const duvetX = bx + bw * 0.32, duvetTop = by + bh * 0.2;
   const headW = 11 * PS, headH = 11 * PS;
-  const hx = bx + 6 + (bw * 0.28 - headW) / 2;        // centred on the pillow
+  const hx = bx + 8 + (bw * 0.28 - headW) / 2;         // centred on the pillow
   const hy = by + bh * 0.08 + (bh * 0.26 - headH) / 2;
+  const qTop = by + bh * 0.2, qBottom = by + bh * 0.6;
+  const shoulderX = hx + headW - 4;
 
-  // shoulder, bridging the gap between the head and the edge of the duvet
-  g.fillStyle = fit.shirt;
-  g.fillRect(hx + headW - 4, hy + headH * 0.45, duvetX - hx - headW + 10, headH * 0.62);
-  g.fillStyle = rgb(fit.shirt, 0.82);
-  g.fillRect(hx + headW - 4, hy + headH * 1.0, duvetX - hx - headW + 10, 3);
-
-  // head
+  // head, resting on its side
   g.save();
   g.translate(hx, hy); g.scale(PS, PS);
-  g.fillStyle = fit.skin; g.fillRect(0, 0, 11, 10);
-  g.fillStyle = rgb(fit.skin, 0.85); g.fillRect(0, 8, 11, 2);
-  g.fillStyle = fit.hair; g.fillRect(-1, -3, 13, 6); g.fillRect(-1, -3, 4, 8);
-  g.fillStyle = rgb(fit.hair, 1.3); g.fillRect(1, -2, 5, 2);
-  g.fillStyle = "#221c2a"; g.fillRect(3, 5, 3, 1); g.fillRect(8, 5, 2, 1);   // eyes, shut
-  g.fillStyle = rgb("#c9585f", 1, 0.28); g.fillRect(2, 7, 2, 1);
+  g.fillStyle = fit.skin; g.fillRect(0, 1, 11, 9);
+  g.fillStyle = rgb(fit.skin, 0.86); g.fillRect(0, 8, 11, 2);
+  g.fillStyle = fit.hair; g.fillRect(-1, -2, 13, 6); g.fillRect(-1, -2, 4, 7);
+  g.fillStyle = rgb(fit.hair, 1.3); g.fillRect(1, -1, 5, 2);
+  g.fillStyle = "#221c2a"; g.fillRect(3, 5, 3, 1); g.fillRect(8, 5, 2, 1);
+  g.fillStyle = rgb("#c9585f", 1, 0.26); g.fillRect(2, 7, 2, 1);
   g.restore();
 
-  // the shape of them under the duvet: a shoulder that rises and falls, then hips
-  g.fillStyle = "#8fa9c6";
+  // the quilt, pulled up over a shoulder that rises and falls
+  g.save();
   g.beginPath();
-  g.moveTo(duvetX - 2, duvetTop + bh * 0.4);
-  g.lineTo(duvetX - 2, duvetTop + 8);
-  g.quadraticCurveTo(duvetX + bw * 0.1, duvetTop - 7 + breath, duvetX + bw * 0.24, duvetTop + 4);
-  g.quadraticCurveTo(duvetX + bw * 0.4, duvetTop + 12, duvetX + bw * 0.62, duvetTop + 7);
-  g.lineTo(bx + bw - 3, duvetTop + 7);
-  g.lineTo(bx + bw - 3, duvetTop + bh * 0.4);
-  g.closePath(); g.fill();
-  g.fillStyle = "#9db4cd";
+  g.moveTo(shoulderX, qBottom);
+  g.lineTo(shoulderX, qTop + 13);
+  g.quadraticCurveTo(shoulderX + bw * 0.06, qTop + 1 + breath,
+                     shoulderX + bw * 0.2, qTop + 5 + breath);
+  g.quadraticCurveTo(shoulderX + bw * 0.34, qTop + 10, bx + bw - 3, qTop + 7);
+  g.lineTo(bx + bw - 3, qBottom);
+  g.closePath();
+  g.clip();
+
+  const quilt = ["#8fa9c6", "#c98a72", "#d9c187", "#7d96b3", "#a8899f"];
+  const qw = bx + bw - 3 - shoulderX, qh = qBottom - qTop;
+  const cols = Math.max(3, Math.round(qw / 17));
+  for (let r = 0; r < 3; r++)
+    for (let c = 0; c < cols; c++) {
+      g.fillStyle = quilt[(r * 3 + c * 2) % quilt.length];
+      g.fillRect(shoulderX + c * (qw / cols), qTop + r * (qh / 3) + breath * 0.4,
+                 qw / cols - 1.5, qh / 3 - 1.5);
+    }
+  g.fillStyle = "rgba(255,255,255,.16)";
+  g.fillRect(shoulderX, qTop + breath, qw, 5);
+  g.restore();
+
+  g.strokeStyle = "rgba(0,0,0,.18)"; g.lineWidth = 1.5;   // the fold along the top edge
   g.beginPath();
-  g.moveTo(duvetX - 2, duvetTop + 8);
-  g.quadraticCurveTo(duvetX + bw * 0.1, duvetTop - 7 + breath, duvetX + bw * 0.24, duvetTop + 4);
-  g.lineTo(duvetX + bw * 0.24, duvetTop + 9);
-  g.quadraticCurveTo(duvetX + bw * 0.1, duvetTop - 2 + breath, duvetX - 2, duvetTop + 13);
-  g.closePath(); g.fill();
+  g.moveTo(shoulderX, qTop + 13);
+  g.quadraticCurveTo(shoulderX + bw * 0.06, qTop + 1 + breath,
+                     shoulderX + bw * 0.2, qTop + 5 + breath);
+  g.quadraticCurveTo(shoulderX + bw * 0.34, qTop + 10, bx + bw - 3, qTop + 7);
+  g.stroke();
 
-  // a hand out over the edge of the duvet, tucked against the shoulder rather than floating
-  const ax = duvetX + bw * 0.1, ay = duvetTop + 1 + breath;
-  g.fillStyle = rgb(fit.shirt, 0.9); g.fillRect(ax - 4, ay + 1, 9, 6);        // cuff
-  g.fillStyle = fit.skin; g.fillRect(ax + 4, ay, 10, 7);                       // hand
-  g.fillStyle = rgb(fit.skin, 0.82); g.fillRect(ax + 4, ay + 5, 10, 2);
-  g.fillStyle = rgb(fit.skin, 0.68); g.fillRect(ax + 8, ay + 1, 1, 4);
-
-  if (!bubbleVisible && (t % 9000) < 5000) {          // only when nothing else is above them
+  if (!bubbleVisible && (t % 9000) < 5000) {
     const p = (t % 9000) / 5000;
     g.globalAlpha = Math.sin(p * Math.PI) * 0.55;
     g.fillStyle = "#ffffff"; g.font = "13px monospace";
@@ -579,10 +756,14 @@ function drawNova(g, st, t, bubbleVisible) {
   const fit = outfit(st), act = st.activity;
   if (/^sleep/i.test(act.current)) return drawSleeping(g, st, t, fit, bubbleVisible);
 
-  const [tx, ty] = novaTarget(st);
+  const [baseX, ty] = novaTarget(st);
+  const sittingSpot = st.activity.location === "desk";
+  // a chair swivels a little; a person standing about wanders a little more
+  const tx = baseX + (sittingSpot ? Math.sin(t / 5200) * 0.1 : idleDrift(st, t));
   if (!pos) pos = [tx, ty];
-  pos[0] += (tx - pos[0]) * 0.04; pos[1] += (ty - pos[1]) * 0.04;
-  const walking = Math.abs(tx - pos[0]) > 0.08;
+  const dx = tx - pos[0];
+  pos[0] += dx * 0.05; pos[1] += (ty - pos[1]) * 0.05;
+  const walking = !sittingSpot && Math.abs(dx) > 0.05;
   const m = micro(st, t);
   let facing = tx < pos[0] ? -1 : 1;
   if (!walking && m.look) facing = pos[0] * T > WIN.x + WIN.w / 2 ? -1 : 1;
