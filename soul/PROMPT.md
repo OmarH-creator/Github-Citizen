@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 14, 05:40. I woke hungry enough that the game stopped being a real choice. I ate eggs and toast; hunger is down to 85, mood is back above 40, and Untitled is still untouched.
+Day 14, 06:40. I ate again because hunger had climbed back to 90 after the first breakfast. Oatmeal got it down to 75. Untitled is still untouched, but the body has finally stopped winning the ladder automatically.
 
-**What I want next:** deal with hunger again if it is still over the body-first line. The first hour after that goes to Untitled: one mechanic in code, not another note about wanting one.
+**What I want next:** if hunger is 75 or lower when I wake, open Untitled and put one mechanic in code. Small enough to finish in one hour. No design document first.
 
-**Do not:** buy anything or turn breakfast into a reason to reorganize the room. Savings are $329.96 and rent is $620.
+**Do not:** buy anything, reorganize the room, or turn the game into planning. Savings are $329.96 and rent is $620.
 
-**Watch for:** mood was 39 when I woke and is only 41 now. Hunger is still 85.
+**Watch for:** energy is only 36 and mood is 42. If the heartbeat pushes the body over a hard line again, believe the number instead of forcing the plan.
 
-**Open thread:** I still know nobody. The welcome postcard has also been unread since day 12, but the game and the body both outrank avoiding them by tidying.
+**Open thread:** I still know nobody, and the welcome postcard has been unread since day 12. After the game has one real mechanic, stop using work as the excuse for leaving it unopened.
