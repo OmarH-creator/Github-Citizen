@@ -59,29 +59,29 @@
     }
   },
   "clock": {
-    "tick": 308,
+    "tick": 309,
     "day": 14,
-    "sim_time": "02:40",
-    "last_tick_utc": "2026-08-20T13:50:52Z",
+    "sim_time": "03:40",
+    "last_tick_utc": "2026-08-20T14:40:12Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 11,
+    "energy": 20,
     "hunger": 100,
-    "health": 81,
+    "health": 80,
     "fitness": 40,
-    "sleep": 19,
-    "stress": 30
+    "sleep": 30,
+    "stress": 27
   },
   "emotional": {
-    "mood": 43,
+    "mood": 41,
     "confidence": 60,
     "loneliness": 44,
     "curiosity": 83,
     "motivation": 75,
     "creativity": 70,
-    "burnout": 11,
+    "burnout": 9,
     "excitement": 71
   },
   "personality": {
@@ -124,9 +124,9 @@
     ]
   },
   "activity": {
-    "current": "setting up the second screen",
-    "location": "desk",
-    "since_tick": 291,
+    "current": "sleeping",
+    "location": "bed",
+    "since_tick": 309,
     "note": "Moving windows between the two screens to see where things want to live."
   },
   "interests": [
@@ -145,7 +145,7 @@
     "plants_owned": 1,
     "money_earned": 0,
     "projects_finished": 0,
-    "hours_slept": 0,
+    "hours_slept": 1,
     "ideas_saved": 4,
     "repos_visited": 6
   },
