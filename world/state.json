@@ -5,292 +5,57 @@
     "born": "2026-08-08T00:00:00Z",
     "pronouns": "they/them",
     "occupation": "Intern",
-    "career_track": [
-      "Intern",
-      "Junior",
-      "Developer",
-      "Senior",
-      "Tech Lead",
-      "Startup Founder",
-      "Indie Developer",
-      "Retired"
-    ],
+    "career_track": ["Intern", "Junior", "Developer", "Senior", "Tech Lead", "Startup Founder", "Indie Developer", "Retired"],
     "dream": "Release a small game that someone I have never met finishes and loves.",
     "avatar": {
-      "hair": "#3b2f4a",
-      "skin": "#e8b48c",
-      "shirt": "#4d7fa8",
-      "pants": "#2f3a4a",
-      "sleepwear": "#6d6480",
+      "hair": "#3b2f4a", "skin": "#e8b48c", "shirt": "#4d7fa8", "pants": "#2f3a4a", "sleepwear": "#6d6480",
       "wardrobe": [
-        {
-          "name": "blue tee",
-          "shirt": "#4d7fa8"
-        },
-        {
-          "name": "green hoodie",
-          "shirt": "#4e7a5e",
-          "hood": true
-        },
-        {
-          "name": "washed-out red tee",
-          "shirt": "#a85a54"
-        },
-        {
-          "name": "grey hoodie",
-          "shirt": "#5c5a66",
-          "hood": true
-        },
-        {
-          "name": "mustard shirt",
-          "shirt": "#b3893f",
-          "collar": true
-        },
-        {
-          "name": "striped tee",
-          "shirt": "#4a6a8a",
-          "stripes": true
-        },
-        {
-          "name": "black tee",
-          "shirt": "#3a3742"
-        }
+        {"name":"blue tee","shirt":"#4d7fa8"},
+        {"name":"green hoodie","shirt":"#4e7a5e","hood":true},
+        {"name":"washed-out red tee","shirt":"#a85a54"},
+        {"name":"grey hoodie","shirt":"#5c5a66","hood":true},
+        {"name":"mustard shirt","shirt":"#b3893f","collar":true},
+        {"name":"striped tee","shirt":"#4a6a8a","stripes":true},
+        {"name":"black tee","shirt":"#3a3742"}
       ]
     }
   },
-  "clock": {
-    "tick": 316,
-    "day": 14,
-    "sim_time": "10:40",
-    "last_tick_utc": "2026-08-20T21:32:16Z",
-    "season": "summer",
-    "weather": "clear"
-  },
-  "physical": {
-    "energy": 27,
-    "hunger": 77,
-    "health": 75,
-    "fitness": 40,
-    "sleep": 51,
-    "stress": 20
-  },
-  "emotional": {
-    "mood": 45,
-    "confidence": 61,
-    "loneliness": 44,
-    "curiosity": 83,
-    "motivation": 73,
-    "creativity": 72,
-    "burnout": 3,
-    "excitement": 73
-  },
-  "personality": {
-    "introversion": 68,
-    "optimism": 59,
-    "risk_taking": 40,
-    "organization": 53,
-    "humor": 58,
-    "kindness": 74,
-    "competitiveness": 35,
-    "patience": 50
-  },
-  "finance": {
-    "savings": 329.96,
-    "salary_monthly": 1400,
-    "rent_monthly": 620,
-    "food_weekly": 55,
-    "expenses_pending": 0,
-    "currency": "USD"
-  },
+  "clock": {"tick":316,"day":14,"sim_time":"10:40","last_tick_utc":"2026-08-20T21:32:16Z","season":"summer","weather":"clear"},
+  "physical": {"energy":27,"hunger":62,"health":75,"fitness":40,"sleep":51,"stress":20},
+  "emotional": {"mood":46,"confidence":61,"loneliness":44,"curiosity":83,"motivation":73,"creativity":72,"burnout":3,"excitement":73},
+  "personality": {"introversion":68,"optimism":59,"risk_taking":40,"organization":53,"humor":58,"kindness":74,"competitiveness":35,"patience":50},
+  "finance": {"savings":329.96,"salary_monthly":1400,"rent_monthly":620,"food_weekly":55,"expenses_pending":0,"currency":"USD"},
   "career": {
-    "level": 0,
-    "experience": 29,
-    "reputation": 4,
-    "followers": 0,
-    "skills": {
-      "javascript": 46,
-      "python": 18,
-      "graphics": 21,
-      "systems": 7,
-      "design": 25
-    },
-    "projects": [
-      {
-        "name": "Untitled",
-        "started_day": 8,
-        "status": "wip",
-        "note": "First mechanic exists: hold Space to keep a square inside a narrowing band.",
-        "url": "games/untitled/index.html"
-      }
-    ]
+    "level":0,"experience":29,"reputation":4,"followers":0,
+    "skills":{"javascript":46,"python":18,"graphics":21,"systems":7,"design":25},
+    "projects":[{"name":"Untitled","started_day":8,"status":"wip","note":"First mechanic exists: hold Space to keep a square inside a narrowing band.","url":"games/untitled/index.html"}]
   },
-  "activity": {
-    "current": "sleeping",
-    "location": "bed",
-    "since_tick": 315,
-    "note": "I closed the game with energy at 18 and went back to bed before I could bargain with the number."
-  },
-  "interests": [
-    "programming",
-    "pixel art",
-    "coffee brewing"
-  ],
-  "hobbies": [],
-  "relationships": [],
-  "cat": null,
-  "stats": {
-    "hours_worked": 63,
-    "commits": 34,
-    "coffee_drank": 5,
-    "books_read": 0,
-    "plants_owned": 1,
-    "money_earned": 0,
-    "projects_finished": 0,
-    "hours_slept": 4,
-    "ideas_saved": 4,
-    "repos_visited": 6
-  },
+  "activity": {"current":"eating early lunch","location":"kitchen","since_tick":316,"note":"Rice and eggs at the counter; apparently three breakfasts did not buy me the whole morning."},
+  "interests":["programming","pixel art","coffee brewing"],
+  "hobbies":[],
+  "relationships":[],
+  "cat":null,
+  "stats":{"hours_worked":63,"commits":34,"coffee_drank":5,"books_read":0,"plants_owned":1,"money_earned":0,"projects_finished":0,"hours_slept":4,"ideas_saved":4,"repos_visited":6},
   "apartment": {
-    "name": "Studio 4B",
-    "wall": "#4e4363",
-    "floor": "#6f4b32",
-    "objects": [
-      {
-        "id": "bed",
-        "kind": "bed",
-        "x": 2,
-        "y": 8,
-        "w": 5,
-        "h": 3
-      },
-      {
-        "id": "counter",
-        "kind": "counter",
-        "x": 19,
-        "y": 8,
-        "w": 5,
-        "h": 2
-      },
-      {
-        "id": "desk",
-        "kind": "desk",
-        "x": 7,
-        "y": 9,
-        "w": 6,
-        "h": 2
-      },
-      {
-        "id": "laptop",
-        "kind": "laptop",
-        "x": 10,
-        "y": 9,
-        "w": 2,
-        "h": 1
-      },
-      {
-        "id": "mug",
-        "kind": "mug",
-        "x": 9,
-        "y": 9,
-        "w": 1,
-        "h": 1
-      },
-      {
-        "id": "lamp",
-        "kind": "lamp",
-        "x": 14.4,
-        "y": 8.5,
-        "w": 1,
-        "h": 4.6
-      },
-      {
-        "id": "clock",
-        "kind": "clock",
-        "x": 12.9,
-        "y": 1.2,
-        "w": 1.7,
-        "h": 1.7
-      },
-      {
-        "id": "books",
-        "kind": "books",
-        "x": 0.7,
-        "y": 11.5,
-        "w": 2,
-        "h": 2
-      },
-      {
-        "id": "office_chair",
-        "kind": "office_chair",
-        "x": 9,
-        "y": 10,
-        "w": 2,
-        "h": 2
-      },
-      {
-        "id": "poster",
-        "kind": "poster",
-        "x": 15.4,
-        "y": 1.1,
-        "w": 2.8,
-        "h": 3.6
-      },
-      {
-        "id": "rug",
-        "kind": "rug",
-        "x": 6,
-        "y": 11,
-        "w": 8,
-        "h": 2
-      },
-      {
-        "id": "plant",
-        "kind": "plant",
-        "x": 20.7,
-        "y": 10.2,
-        "w": 2,
-        "h": 3.2
-      },
-      {
-        "id": "coffee_machine",
-        "kind": "coffee_machine",
-        "x": 21,
-        "y": 6,
-        "w": 2,
-        "h": 2
-      },
-      {
-        "id": "monitor",
-        "kind": "monitor",
-        "x": 7,
-        "y": 9,
-        "w": 3,
-        "h": 1
-      },
-      {
-        "id": "shelf_unit",
-        "kind": "shelf_unit",
-        "x": 11.4,
-        "y": 2.9,
-        "w": 3.4,
-        "h": 4.1
-      },
-      {
-        "id": "desk_lamp",
-        "kind": "desk_lamp",
-        "x": 12.5,
-        "y": 9,
-        "w": 1.1,
-        "h": 1
-      },
-      {
-        "id": "keyboard",
-        "kind": "keyboard",
-        "x": 8.2,
-        "y": 9.15,
-        "w": 3,
-        "h": 0.6
-      }
+    "name":"Studio 4B","wall":"#4e4363","floor":"#6f4b32",
+    "objects":[
+      {"id":"bed","kind":"bed","x":2,"y":8,"w":5,"h":3},
+      {"id":"counter","kind":"counter","x":19,"y":8,"w":5,"h":2},
+      {"id":"desk","kind":"desk","x":7,"y":9,"w":6,"h":2},
+      {"id":"laptop","kind":"laptop","x":10,"y":9,"w":2,"h":1},
+      {"id":"mug","kind":"mug","x":9,"y":9,"w":1,"h":1},
+      {"id":"lamp","kind":"lamp","x":14.4,"y":8.5,"w":1,"h":4.6},
+      {"id":"clock","kind":"clock","x":12.9,"y":1.2,"w":1.7,"h":1.7},
+      {"id":"books","kind":"books","x":0.7,"y":11.5,"w":2,"h":2},
+      {"id":"office_chair","kind":"office_chair","x":9,"y":10,"w":2,"h":2},
+      {"id":"poster","kind":"poster","x":15.4,"y":1.1,"w":2.8,"h":3.6},
+      {"id":"rug","kind":"rug","x":6,"y":11,"w":8,"h":2},
+      {"id":"plant","kind":"plant","x":20.7,"y":10.2,"w":2,"h":3.2},
+      {"id":"coffee_machine","kind":"coffee_machine","x":21,"y":6,"w":2,"h":2},
+      {"id":"monitor","kind":"monitor","x":7,"y":9,"w":3,"h":1},
+      {"id":"shelf_unit","kind":"shelf_unit","x":11.4,"y":2.9,"w":3.4,"h":4.1},
+      {"id":"desk_lamp","kind":"desk_lamp","x":12.5,"y":9,"w":1.1,"h":1},
+      {"id":"keyboard","kind":"keyboard","x":8.2,"y":9.15,"w":3,"h":0.6}
     ]
   }
 }
