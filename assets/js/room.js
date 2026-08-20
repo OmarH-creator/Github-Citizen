@@ -651,7 +651,11 @@ function micro(st, t) {
 }
 
 /* ================= the person ================= */
-const SPOT = { kitchen: [18.6, 10.3], window: [8, 10.4], floor: [12, 11], outside: [-3, 11] };
+const SPOT = { kitchen: [17.3, 10.3], window: [8, 10.4], floor: [12, 11], outside: [-3, 11] };
+
+// How far Nova may drift while idling, per spot. Without this he wanders into the furniture --
+// he is drawn after the room, so anything he reaches he appears to stand on top of.
+const WALK = { kitchen: [16.3, 17.9], window: [6.6, 8.4], floor: [11.4, 13.5] };
 const PS = 1.7;
 
 function novaTarget(st) {
@@ -759,7 +763,9 @@ function drawNova(g, st, t, bubbleVisible) {
   const [baseX, ty] = novaTarget(st);
   const sittingSpot = st.activity.location === "desk";
   // a chair swivels a little; a person standing about wanders a little more
-  const tx = baseX + (sittingSpot ? Math.sin(t / 5200) * 0.1 : idleDrift(st, t));
+  let tx = baseX + (sittingSpot ? Math.sin(t / 5200) * 0.1 : idleDrift(st, t));
+  const bounds = WALK[st.activity.location];
+  if (bounds) tx = Math.max(bounds[0], Math.min(bounds[1], tx));
   if (!pos) pos = [tx, ty];
   const dx = tx - pos[0];
   pos[0] += dx * 0.05; pos[1] += (ty - pos[1]) * 0.05;
