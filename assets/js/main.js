@@ -256,8 +256,21 @@ shown = live;
 if (live) setupTimeline();
 
 const canvas = $("#room");
+const touch = window.matchMedia("(hover: none)").matches;
+
+// The canvas is a fixed 768x448 but is shown at whatever width the screen allows. On a phone
+// that is well under half size, so anything with text on it has to be drawn correspondingly
+// bigger or it becomes unreadable.
+let uiScale = 1;
+const measure = () => {
+  const w = canvas.getBoundingClientRect().width || canvas.width;
+  uiScale = Math.max(1, Math.min(2.4, canvas.width / w));
+};
+measure();
+addEventListener("resize", measure);
+addEventListener("orientationchange", () => setTimeout(measure, 200));
 (function loop(t) {
-  if (shown) render(canvas, shown, t, hover, shown === live ? thoughtPool : null);
+  if (shown) render(canvas, shown, t, hover, shown === live ? thoughtPool : null, uiScale);
   requestAnimationFrame(loop);
 })(0);
 
@@ -271,7 +284,17 @@ canvas.addEventListener("mousemove", (e) => {
   canvas.style.cursor = hover ? "pointer" : "default";
 });
 canvas.addEventListener("mouseleave", () => { hover = null; });
-canvas.addEventListener("click", (e) => { if (shown) inspect(hitTest(shown, ...at(e))); });
+canvas.addEventListener("click", (e) => {
+  if (!shown) return;
+  const hit = hitTest(shown, ...at(e));
+  if (touch) hover = hit;                 // no pointer to hover with, so the tap highlights
+  inspect(hit);
+});
+
+if (touch) {
+  const hint = document.querySelector(".hint");
+  if (hint) hint.textContent = "Tap anything in the room — it remembers why it is there.";
+}
 
 document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => {
   document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("on", x === b));

@@ -8,7 +8,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:
+body{margin:0;touch-action:manipulation;background:
   radial-gradient(900px 500px at 30% -10%, #1d1830 0%, transparent 70%), var(--bg);
   color:var(--ink);font:14px/1.55 var(--font)}
 a{color:var(--accent);text-underline-offset:3px}
@@ -38,7 +38,8 @@ main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,.9fr);gap:1
 /* ---------- stage ---------- */
 .canvaswrap{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;
   box-shadow:0 18px 40px #0007, inset 0 0 0 1px #ffffff08}
-canvas{width:100%;height:auto;display:block;image-rendering:pixelated;background:#0b0913}
+canvas{width:100%;height:auto;display:block;image-rendering:pixelated;background:#0b0913;
+  touch-action:manipulation}
 .doingbar{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin:.75rem .2rem .1rem}
 .doing{margin:0;font-size:15px}
 .doing b{font-weight:600;letter-spacing:.02em}
@@ -126,3 +127,47 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:grab}
   font-family:var(--font);font-size:12.5px;color:var(--dim)}
 
 footer{padding:1.2rem;text-align:center;border-top:1px solid var(--line)}
+
+
+/* ---------- phones ----------
+   The panel stops being its own scroll container, the room goes edge to edge so it is as
+   big as the screen allows, and the object card sits under the room instead of on top of it. */
+@media(max-width:700px){
+  main{padding:.6rem;gap:.7rem}
+  .bar{padding:.6rem .75rem;gap:.4rem .8rem}
+  .bar strong{font-size:17px}
+  .who{gap:.6rem}
+  .daycount{padding:.25rem .55rem .25rem .5rem}
+  .daycount b{font-size:22px}
+  .now span{margin-left:0;margin-right:.9rem}
+  .now{display:flex;flex-wrap:wrap}
+  #hAge{font-size:11px}
+
+  .stage{margin:0 -.6rem}
+  .canvaswrap{border-radius:0;border-left:0;border-right:0}
+  .doingbar,.hint{padding:0 .6rem}
+  .doing{font-size:14px}
+
+  /* under the room, not over it -- the room is too small to cover on a phone */
+  .inspect{position:static;max-width:none;margin:.7rem .6rem 0;border-radius:6px;
+    box-shadow:none;backdrop-filter:none}
+
+  .rewind{top:.4rem;font-size:11px;padding:.25rem .3rem .25rem .7rem}
+
+  /* one page scroll, not two */
+  .tabbody{max-height:none;padding:.85rem}
+  .tabs{flex-wrap:wrap}
+  .tab{flex:1 0 33.33%;padding:.75rem .2rem;font-size:12px}
+  .tab+.tab{border-left:1px solid var(--line)}
+  .tab:nth-child(4){border-left:0}
+  .grid2{grid-template-columns:1fr 1fr;gap:.8rem}
+  .journal{font-size:15px}
+  input[type=range]{height:28px}
+  .msg{padding:.55rem 0 .7rem .75rem}
+}
+
+@media(max-width:380px){
+  .grid2{grid-template-columns:1fr}
+  .daycount b{font-size:20px}
+  .bar strong{font-size:16px}
+}

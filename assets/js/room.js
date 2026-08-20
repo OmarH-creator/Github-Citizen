@@ -731,7 +731,7 @@ function drawCat(g, st, t, novaPx) {
 /* ================= what Nova is thinking ================= */
 const BUBBLE_MS = 21000, BUBBLE_SHOW = 9000;
 
-function drawThought(g, thoughts, t, anchor) {
+function drawThought(g, thoughts, t, anchor, ui = 1) {
   if (!thoughts || !thoughts.length || !anchor) return;
   const phase = t % BUBBLE_MS;
   if (phase > BUBBLE_SHOW) return;
@@ -741,9 +741,9 @@ function drawThought(g, thoughts, t, anchor) {
 
   g.save();
   g.globalAlpha = fade;
-  g.font = "12px ui-monospace, monospace";
+  g.font = `${Math.round(12 * ui)}px ui-monospace, monospace`;
 
-  const maxW = 210, words = text.split(" "), lines = [];
+  const maxW = Math.min(COLS * T - 40, 210 * ui), words = text.split(" "), lines = [];
   let line = "";
   for (const wd of words) {
     const test = line ? line + " " + wd : wd;
@@ -752,17 +752,17 @@ function drawThought(g, thoughts, t, anchor) {
   }
   if (line) lines.push(line);
 
-  const lh = 15, padX = 10, padY = 8;
+  const lh = 15 * ui, padX = 10 * ui, padY = 8 * ui;
   const bw = Math.min(maxW, Math.max(...lines.map((l) => g.measureText(l).width))) + padX * 2;
   const bh = lines.length * lh + padY * 2;
   // keep it up on the wall, where it never covers the furniture Nova is using
   let bx = anchor[0] + 22 - bw / 2;
-  let by = Math.max(6, Math.min(anchor[1] - bh - 34, FLOOR_Y - bh - 30));
+  let by = Math.max(6, Math.min(anchor[1] - bh - 34 * ui, FLOOR_Y - bh - 30));
   bx = Math.max(8, Math.min(COLS * T - bw - 8, bx));
 
   g.fillStyle = "rgba(24,20,34,.92)";
   g.strokeStyle = "rgba(224,178,92,.55)"; g.lineWidth = 1;
-  const r = 9;
+  const r = 9 * ui;
   g.beginPath();
   g.moveTo(bx + r, by); g.lineTo(bx + bw - r, by); g.quadraticCurveTo(bx + bw, by, bx + bw, by + r);
   g.lineTo(bx + bw, by + bh - r); g.quadraticCurveTo(bx + bw, by + bh, bx + bw - r, by + bh);
@@ -776,17 +776,17 @@ function drawThought(g, thoughts, t, anchor) {
   for (let i = 0; i < 3; i++) {
     const k = (i + 1) / 3.6;
     g.beginPath();
-    g.arc(tailX + (anchor[0] + 22 - tailX) * k, by + bh + gap * k, 5 - i * 1.4, 0, 7);
+    g.arc(tailX + (anchor[0] + 22 - tailX) * k, by + bh + gap * k, (5 - i * 1.4) * ui, 0, 7);
     g.fill(); g.stroke();
   }
 
   g.fillStyle = "#ece8f5";
-  lines.forEach((l, i) => g.fillText(l, bx + padX, by + padY + 11 + i * lh));
+  lines.forEach((l, i) => g.fillText(l, bx + padX, by + padY + 11 * ui + i * lh));
   g.restore();
 }
 
 /* ================= frame ================= */
-export function render(canvas, st, t, hover, thoughts) {
+export function render(canvas, st, t, hover, thoughts, ui = 1) {
   const g = canvas.getContext("2d");
   const ap = st.apartment;
   const light = daylight(st);
@@ -880,7 +880,7 @@ export function render(canvas, st, t, hover, thoughts) {
     }
   }
 
-  drawThought(g, thoughts, t, anchor);
+  drawThought(g, thoughts, t, anchor, ui);
 
   const vg = g.createRadialGradient(COLS * T / 2, ROWS * T / 2, ROWS * T * 0.5,
                                     COLS * T / 2, ROWS * T / 2, COLS * T * 0.72);
