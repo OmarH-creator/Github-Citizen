@@ -211,18 +211,6 @@
       },
       "bought_day": 14,
       "bought_date": "2026-08-21"
-    },
-    {
-      "id": "armchair",
-      "label": "Armchair from the landing",
-      "reason": "Somebody two floors down left it by the bins with a FREE sign taped to it. One arm is worn through. I carried it up before anybody else could.",
-      "cost": 0,
-      "bought_day": 14,
-      "bought_date": "2026-08-21",
-      "effects": {
-        "mood": 5,
-        "stress": -3
-      }
     }
   ]
 }
