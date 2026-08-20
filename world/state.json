@@ -68,14 +68,14 @@
   },
   "physical": {
     "energy": 38,
-    "hunger": 100,
+    "hunger": 85,
     "health": 78,
     "fitness": 40,
     "sleep": 52,
     "stress": 21
   },
   "emotional": {
-    "mood": 39,
+    "mood": 41,
     "confidence": 60,
     "loneliness": 44,
     "curiosity": 83,
@@ -124,10 +124,10 @@
     ]
   },
   "activity": {
-    "current": "sleeping",
-    "location": "bed",
-    "since_tick": 309,
-    "note": "Moving windows between the two screens to see where things want to live."
+    "current": "eating breakfast",
+    "location": "kitchen",
+    "since_tick": 311,
+    "note": "Eggs and toast at the counter before sunrise; I was too hungry to pretend the game came first."
   },
   "interests": [
     "programming",

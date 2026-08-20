@@ -293,6 +293,13 @@
       "time": "03:40",
       "kind": "heartbeat",
       "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 311,
+      "day": 14,
+      "time": "05:40",
+      "kind": "body",
+      "text": "Made eggs and toast before sunrise because hunger had hit the ceiling."
     }
   ]
 }
