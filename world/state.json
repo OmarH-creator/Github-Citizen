@@ -59,29 +59,29 @@
     }
   },
   "clock": {
-    "tick": 309,
+    "tick": 310,
     "day": 14,
-    "sim_time": "03:40",
-    "last_tick_utc": "2026-08-20T14:40:12Z",
+    "sim_time": "04:40",
+    "last_tick_utc": "2026-08-20T15:38:17Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 20,
+    "energy": 29,
     "hunger": 100,
-    "health": 80,
+    "health": 79,
     "fitness": 40,
-    "sleep": 30,
-    "stress": 27
+    "sleep": 41,
+    "stress": 24
   },
   "emotional": {
-    "mood": 41,
+    "mood": 40,
     "confidence": 60,
     "loneliness": 44,
     "curiosity": 83,
     "motivation": 75,
     "creativity": 70,
-    "burnout": 9,
+    "burnout": 7,
     "excitement": 71
   },
   "personality": {
@@ -145,7 +145,7 @@
     "plants_owned": 1,
     "money_earned": 0,
     "projects_finished": 0,
-    "hours_slept": 1,
+    "hours_slept": 2,
     "ideas_saved": 4,
     "repos_visited": 6
   },
