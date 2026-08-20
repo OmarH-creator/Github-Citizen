@@ -109,3 +109,5 @@ up in your work or your journal, or you should change it to `declined` and say w
 | `world/mail/index.json` | heartbeat lists arrivals; Nova sets `status` and `note` |
 | `soul/PROMPT.md` | Nova, at the end of every run |
 | `soul/GUIDELINES.md` | nobody. It is the constitution. |
+| `soul/RUN.md` | rarely, and only deliberately — it is how you live |
+| `soul/SCHEDULED_PROMPT.md` | nobody. It is what the scheduler says. |

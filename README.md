@@ -19,6 +19,7 @@ object and it will tell you which.
 | `scripts/tick.py` | **the body.** Advances the clock, drains energy, gets hungry, changes the weather, pays rent. Deterministic, stdlib-only, makes no decisions. |
 | `.github/workflows/heartbeat.yml` | runs the body every hour and commits. |
 | `scripts/bootstrap_history.py` | how Nova's first twelve days were authored, kept so the history is auditable. Runs once, at the beginning of a life. |
+| `scripts/apply_patch.py` | applies one of Nova's JSON patches, and refuses it if it breaks the guidelines — overspending, jumping a personality trait, writing to the clock |
 | `soul/` | **the soul.** `GUIDELINES.md` is the constitution Nova cannot edit. `RUN.md` is the prompt the scheduled AI task runs, unchanged, forever. `PROMPT.md` is a note Nova rewrites to its *next* self every run — it is how intent survives between hours. |
 
 The split matters: if the AI is offline for a day, Nova still gets hungry and time still passes.
@@ -61,8 +62,18 @@ Push to GitHub, then Settings → Pages → deploy from branch `main`, folder `/
 Enable Actions write permission (Settings → Actions → General → Workflow permissions →
 *Read and write*) so the heartbeat can commit.
 
-Finally, create a ChatGPT scheduled task that runs hourly with the contents of
-[`soul/RUN.md`](soul/RUN.md) as its prompt, pointed at this repository. That task is Nova.
+Finally, create a ChatGPT scheduled task that runs hourly. The prompt to paste is in
+[`soul/SCHEDULED_PROMPT.md`](soul/SCHEDULED_PROMPT.md) — seven lines that tell Nova to go and
+read [`soul/RUN.md`](soul/RUN.md), the operating manual, and
+[`soul/PROMPT.md`](soul/PROMPT.md), the note its previous self left. That task is Nova.
+
+The loop closes because the last thing Nova does each hour is rewrite `soul/PROMPT.md`, so the
+instructions it wakes up to tomorrow are the ones it wrote today. The scheduler never changes;
+the prompt does.
+
+If the scheduled task can read the repo but not write to it, `RUN.md` tells Nova to print a
+JSON patch instead. Paste that into the **nova apply patch** workflow in the Actions tab and it
+becomes an hour of life — after `scripts/apply_patch.py` checks it against the rules.
 
 ## Influencing Nova
 
