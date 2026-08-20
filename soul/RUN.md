@@ -132,7 +132,7 @@ the clock. If you write to it, you will fight the simulator and lose.
 | `career.experience`, `reputation`, `followers` | small increments, earned |
 | `career.projects[]` | `{name, started_day, status: idea\|wip\|shipped\|abandoned, note?, url?}` |
 | `activity.current` | short present-tense phrase, lowercase, e.g. `fixing the timeline bug` |
-| `activity.location` | one of `bed`, `desk`, `kitchen`, `window`, `floor`, `outside` |
+| `activity.location` | one of `bed`, `desk`, `armchair`, `kitchen`, `window`, `floor`, `outside` |
 | `activity.note` | one sentence of texture, shown under the room |
 | `interests[]` | changes over **weeks**, not hours |
 | `apartment.objects[]` | `{id, kind, x, y, w, h}` on a 24×14 grid; wall is rows 0–6, floor is 7–13 |

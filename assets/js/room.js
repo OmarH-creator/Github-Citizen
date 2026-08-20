@@ -232,10 +232,11 @@ function drawArchitecture(g, st, t, light) {
   g.fillStyle = "#8a6a48"; g.fillRect(ux + 34, 4.4 * T + 4, 7, 20);                  // board
   g.fillStyle = "#b9bec4"; g.fillRect(ux + 46, 4.4 * T + 4, 4, 16);
 
-  g.fillStyle = "#9aa0a8"; g.fillRect(19.1 * T, FLOOR_Y - 4, 1.2 * T, 4);            // bin
-  g.fillStyle = "#8b919a"; g.fillRect(19.15 * T, 11.0 * T, 1.1 * T, 1.6 * T);
-  g.fillStyle = "#a8aeb6"; g.fillRect(19.1 * T, 10.85 * T, 1.2 * T, 8);
-  g.fillStyle = "#7d838b"; g.fillRect(19.45 * T, 10.9 * T, 12, 3);
+  const binX = 22.9 * T;                                                             // bin
+  g.fillStyle = "#9aa0a8"; g.fillRect(binX, FLOOR_Y - 4, 1.2 * T, 4);
+  g.fillStyle = "#8b919a"; g.fillRect(binX + 2, 11.0 * T, 1.1 * T, 1.6 * T);
+  g.fillStyle = "#a8aeb6"; g.fillRect(binX, 10.85 * T, 1.2 * T, 8);
+  g.fillStyle = "#7d838b"; g.fillRect(binX + 11, 10.9 * T, 12, 3);
 
   // --- power socket ---
   g.fillStyle = "#e6e2d8"; g.fillRect(15.3 * T, 6.2 * T, 12, 10);
@@ -740,11 +741,11 @@ function micro(st, t) {
 }
 
 /* ================= the person ================= */
-const SPOT = { kitchen: [17.3, 10.3], window: [8, 10.4], floor: [12, 11], outside: [-3, 11] };
+const SPOT = { kitchen: [19.1, 10.3], window: [8, 10.4], floor: [12, 11], outside: [-3, 11] };
 
 // How far Nova may drift while idling, per spot. Without this he wanders into the furniture --
 // he is drawn after the room, so anything he reaches he appears to stand on top of.
-const WALK = { kitchen: [16.3, 17.9], window: [6.6, 8.4], floor: [11.4, 13.5] };
+const WALK = { kitchen: [18.7, 19.7], window: [6.6, 8.4], floor: [11.4, 13.5] };
 const PS = 1.7;
 
 function novaTarget(st) {
@@ -754,6 +755,10 @@ function novaTarget(st) {
     const d = objs.find((o) => o.kind === "desk");
     if (c) return [c.x + (c.w || 1) / 2 - 0.35, c.y - 0.55];
     if (d) return [d.x + (d.w || 1) / 2, d.y + 2];
+  }
+  if (st.activity.location === "armchair") {
+    const a = objs.find((o) => o.kind === "armchair");
+    if (a) return [a.x + (a.w || 1) / 2 - 0.42, a.y + 0.15];
   }
   if (st.activity.location === "bed") {
     const b = objs.find((o) => o.kind === "bed");
@@ -768,7 +773,7 @@ let pos = null;                              // persists between frames so Nova 
 // time, which reads as frozen rather than alive. So between decisions they drift: a few
 // steps, a pause, a few steps back. It changes nothing in the world -- it is just fidgeting.
 function idleDrift(st, t) {
-  if (["desk", "bed", "outside"].includes(st.activity.location)) return 0;
+  if (["desk", "bed", "armchair", "outside"].includes(st.activity.location)) return 0;
   const period = 11000;
   const i = Math.floor(t / period), p = (t % period) / period;
   const at = (n) => {                                 // a properly mixed hash: the plain
@@ -850,7 +855,7 @@ function drawNova(g, st, t, bubbleVisible) {
   if (/^sleep/i.test(act.current)) return drawSleeping(g, st, t, fit, bubbleVisible);
 
   const [baseX, ty] = novaTarget(st);
-  const sittingSpot = st.activity.location === "desk";
+  const sittingSpot = st.activity.location === "desk" || st.activity.location === "armchair";
   // a chair swivels a little; a person standing about wanders a little more
   let tx = baseX + (sittingSpot ? Math.sin(t / 5200) * 0.1 : idleDrift(st, t));
   const bounds = WALK[st.activity.location];
@@ -863,7 +868,7 @@ function drawNova(g, st, t, bubbleVisible) {
   let facing = tx < pos[0] ? -1 : 1;
   if (!walking && m.look) facing = pos[0] * T > WIN.x + WIN.w / 2 ? -1 : 1;
 
-  const sitting = !walking && act.location === "desk";
+  const sitting = !walking && sittingSpot;
   const typing = sitting && !m.sip && !m.yawn &&
                  /work|cod|writ|typ|build|fix|refactor|debug|read|set/i.test(act.current);
   const step = walking ? Math.sin(t / 90) : 0;

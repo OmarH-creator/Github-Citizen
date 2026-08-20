@@ -16,7 +16,7 @@
 | `career.skills.*` | int | 0–100 | free-form keys, add new ones as they are learned |
 | `career.projects[]` | object | — | `{ name, started_day, status: idea\|wip\|shipped\|abandoned, url? }` |
 | `activity.current` | string | — | short present-tense phrase, shown live on the site |
-| `activity.location` | enum | bed/desk/kitchen/window/floor/outside | positions the sprite |
+| `activity.location` | enum | bed/desk/armchair/kitchen/window/floor/outside | positions the sprite |
 | `interests[]` | strings | — | drives feed + what the room slowly becomes |
 | `relationships[]` | object | — | `{ name, kind, met_day, note }` |
 | `cat` | null or object | — | `{ name, adopted_day }` |
