@@ -33,7 +33,9 @@ h4:first-child{margin-top:.2rem}
 
 main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(320px,.9fr);gap:1.1rem;
   padding:1.1rem;max-width:1500px;margin:0 auto;align-items:start}
-@media(max-width:960px){main{grid-template-columns:1fr}}
+/* once the panel sits under the room, a scroll box inside a scroll page is just confusing */
+@media(max-width:960px){main{grid-template-columns:1fr}
+  .tabbody{max-height:none}}
 
 /* ---------- stage ---------- */
 .canvaswrap{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;
