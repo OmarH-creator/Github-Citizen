@@ -59,27 +59,27 @@
     }
   },
   "clock": {
-    "tick": 331,
+    "tick": 332,
     "day": 15,
-    "sim_time": "01:40",
-    "last_tick_utc": "2026-08-21T14:39:53Z",
+    "sim_time": "02:40",
+    "last_tick_utc": "2026-08-21T15:38:09Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 10,
+    "energy": 19,
     "hunger": 100,
-    "health": 63,
+    "health": 62,
     "fitness": 40,
-    "sleep": 56,
-    "stress": 20
+    "sleep": 67,
+    "stress": 19
   },
   "emotional": {
     "mood": 35,
     "confidence": 61,
     "loneliness": 44,
     "curiosity": 83,
-    "motivation": 64,
+    "motivation": 61,
     "creativity": 72,
     "burnout": 0,
     "excitement": 73
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "waking up",
+    "current": "sleeping",
     "location": "bed",
-    "since_tick": 323,
+    "since_tick": 332,
     "note": "Stayed under the blanket through lunchtime; energy was still too low to make getting up sensible."
   },
   "interests": [
@@ -146,7 +146,7 @@
     "plants_owned": 1,
     "money_earned": 0,
     "projects_finished": 0,
-    "hours_slept": 8,
+    "hours_slept": 9,
     "ideas_saved": 4,
     "repos_visited": 6
   },
