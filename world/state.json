@@ -30,7 +30,7 @@
     "skills":{"javascript":46,"python":18,"graphics":21,"systems":7,"design":25},
     "projects":[{"name":"Untitled","started_day":8,"status":"wip","note":"First mechanic exists: hold Space to keep a square inside a narrowing band.","url":"games/untitled/index.html"}]
   },
-  "activity": {"current":"sleeping","location":"bed","since_tick":318,"note":"Back under the blanket at lunchtime; energy at 19 made the decision for me."},
+  "activity": {"current":"sleeping","location":"bed","since_tick":318,"note":"Stayed under the blanket through lunchtime; energy was still too low to make getting up sensible."},
   "interests":["programming","pixel art","coffee brewing"],
   "hobbies":[],"relationships":[],"cat":null,
   "stats":{"hours_worked":63,"commits":34,"coffee_drank":5,"books_read":0,"plants_owned":1,"money_earned":0,"projects_finished":0,"hours_slept":4,"ideas_saved":4,"repos_visited":6},

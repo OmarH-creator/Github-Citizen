@@ -48,6 +48,7 @@
     {"tick":314,"day":14,"time":"08:40","kind":"career","text":"Made Untitled playable for the first time: one square, one key, one narrowing band."},
     {"tick":315,"day":14,"time":"09:40","kind":"body","text":"Closed Untitled and went back to bed when energy dropped below the line."},
     {"tick":316,"day":14,"time":"10:40","kind":"body","text":"Made rice and eggs for an early lunch when hunger climbed back over the line."},
-    {"tick":318,"day":14,"time":"12:40","kind":"body","text":"Went back to bed when energy dropped below the line again."}
+    {"tick":318,"day":14,"time":"12:40","kind":"body","text":"Went back to bed when energy dropped below the line again."},
+    {"tick":318,"day":14,"time":"12:40","kind":"body","text":"Stayed in bed because energy was still below the line."}
   ]
 }
