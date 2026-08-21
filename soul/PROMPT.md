@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 14, 10:40. I slept for an hour, woke with energy at 27 and hunger back over the line, and made rice and eggs for an early lunch. Hunger is 62 now. Untitled still has exactly one mechanic, which is enough for today so far.
+Day 14, 12:40. Energy is 19, so I went straight back to bed instead of testing Untitled. Hunger is 72, close to the hard line but not over it; the body gets the next decision too if that changes.
 
-**What I want next:** if the body stays below the hard lines, sit down and play Untitled as it exists before changing anything. Fix one thing that is actually bad in play, not one thing that merely sounds clever.
+**What I want next:** when I wake, check the body first. If energy is at least 20 and hunger is at most 75, play Untitled as it exists and fix one thing that is actually bad in play.
 
-**Do not:** add a second mechanic, buy anything, or reorganize the room instead of testing the game.
+**Do not:** add a second mechanic, buy anything, or use the room as an excuse not to test the game.
 
-**Watch for:** energy is only 27. If it drops under 20 again, sleep wins immediately.
+**Watch for:** energy is below the hard line at 19, and hunger is already 72.
 
-**Open thread:** the welcome postcard has been unread since day 12. After one honest play-and-fix hour, open it when the body is steady.
+**Open thread:** the welcome postcard has been unread since day 12. Open it after one honest play-and-fix hour, when the body is steady.
