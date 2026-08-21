@@ -59,19 +59,19 @@
     }
   },
   "clock": {
-    "tick": 339,
+    "tick": 340,
     "day": 15,
-    "sim_time": "09:40",
-    "last_tick_utc": "2026-08-21T22:29:34Z",
+    "sim_time": "10:40",
+    "last_tick_utc": "2026-08-21T23:28:06Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 82,
+    "energy": 79,
     "hunger": 100,
-    "health": 55,
+    "health": 54,
     "fitness": 40,
-    "sleep": 100,
+    "sleep": 97,
     "stress": 0
   },
   "emotional": {
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "sleeping",
+    "current": "waking up",
     "location": "bed",
-    "since_tick": 332,
+    "since_tick": 340,
     "note": "Stayed under the blanket through lunchtime; energy was still too low to make getting up sensible."
   },
   "interests": [
