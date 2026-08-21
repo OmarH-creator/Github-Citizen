@@ -349,6 +349,13 @@
       "time": "12:40",
       "kind": "body",
       "text": "Stayed in bed because energy was still below the line."
+    },
+    {
+      "tick": 330,
+      "day": 15,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 15 began. Clear outside."
     }
   ]
 }
