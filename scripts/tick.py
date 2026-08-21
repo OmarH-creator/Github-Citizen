@@ -80,11 +80,11 @@ def main():
     # The body does not decide how Nova spends an hour -- that is the soul's job. It only
     # collapses when there is nothing left, and wakes up once it has had enough. Staying up
     # is allowed; it is simply expensive.
-    if not asleep and phy["energy"] <= 12:
+    if not asleep and phy["energy"] <= 10:
         asleep = True
         st["activity"].update(current="sleeping", location="bed", since_tick=c["tick"])
         log.append("Ran out of energy and fell asleep without deciding to.")
-    elif asleep and (phy["energy"] >= 96 or (h >= 9 and phy["energy"] >= 55)):
+    elif asleep and (phy["energy"] >= 96 or (h >= 8 and phy["energy"] >= 78)):
         asleep = False
         st["activity"].update(current="waking up", location="bed", since_tick=c["tick"])
 
@@ -92,15 +92,15 @@ def main():
     if asleep:
         phy["energy"] = clamp(phy["energy"] + 9)
         phy["sleep"] = clamp(phy["sleep"] + 11)
-        phy["hunger"] = clamp(phy["hunger"] + 2)
+        phy["hunger"] = clamp(phy["hunger"] + 1)
         phy["stress"] = clamp(phy["stress"] - 3)
         emo["burnout"] = clamp(emo["burnout"] - 2)
         st["stats"]["hours_slept"] += 1
     else:
         night = h < 6 or h >= 23          # being awake at 3am costs more than at 3pm
-        phy["energy"] = clamp(phy["energy"] - (7 if night else 4))
+        phy["energy"] = clamp(phy["energy"] - (6 if night else 3))
         phy["sleep"] = clamp(phy["sleep"] - (5 if night else 3))
-        phy["hunger"] = clamp(phy["hunger"] + 5)
+        phy["hunger"] = clamp(phy["hunger"] + 3)
         phy["fitness"] = clamp(phy["fitness"] - 0.3)
         if night:
             phy["stress"] = clamp(phy["stress"] + 2)

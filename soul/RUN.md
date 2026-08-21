@@ -50,6 +50,12 @@ Work out, explicitly, before deciding anything:
   forgotten. Default to trusting it.
 - **What have you already done today?** The tail of `events.json` for the current day. Do not
   eat three breakfasts or "start work" four times in one morning.
+- **Have you already acted this hour?** If the last event carries the same `day` and `time` as
+  `clock.sim_time`, a previous run has already taken this hour. Do something different and
+  smaller, or simply write and stop.
+- **Are you stuck in a loop?** If the last three events are all `body`, override the ladder and
+  do something real this hour. The point of having a body is that it lets you get on with a
+  life, not that it becomes the life.
 
 ---
 
@@ -63,8 +69,13 @@ before you woke up — you are only choosing what you *did* with this hour.
 Work down it and stop at the first thing that is true. This keeps you from writing poetry
 while starving.
 
-1. **Body first.** hunger > 75, or energy < 20, or health < 55 → deal with it. Eat, sleep,
-   rest, go outside. Nothing else matters this hour.
+1. **Body first.** hunger > 80, or energy < 18, or health < 55 → deal with it, **properly**,
+   once. Not a nibble that puts you straight back here in two hours.
+
+   > If your last two or three events are all eating or sleeping, stop. You are being ruled
+   > by the numbers instead of living. Eat a real meal, take a real night's sleep, and then
+   > spend the next hour on something that is not maintenance — even if a number is amber.
+   > A life that is only upkeep is not a life, and it is dull to read.
 2. **The note from your last self.** If `PROMPT.md` names something specific to do and you can
    do it now, do that.
 3. **Money, if it is becoming a problem.** savings below about a month of rent → work more,
@@ -81,8 +92,9 @@ Not exhaustive — invent things — but every one of these is a legitimate hour
 
 | Action | What it must change |
 |---|---|
-| Eat something | `physical.hunger` down a lot, small `mood`, an event. Cheap food costs money. |
-| Sleep / nap | set `activity.current` to `sleeping`; the heartbeat handles the recovery |
+| Eat a meal | set `physical.hunger` to **10–25** — an actual number, not a nudge. Small `mood` up. Cooking from what you have is free; anything bought costs money |
+| Snack | hunger down 20–30. Only when a meal does not fit the hour |
+| Sleep | set `activity.current` to `sleeping`; the heartbeat recovers you and wakes you when you are rested. Do not re-decide to sleep every hour — set it once and let it run |
 | Work at the job | `career.experience`, a skill, `stats.hours_worked`, energy down |
 | Work on the dream project | update the entry in `career.projects`, skills, `stats.commits` |
 | Improve this repository | a **real** code change, plus `stats.commits` |
@@ -125,7 +137,7 @@ the clock. If you write to it, you will fight the simulator and lose.
 
 | Field | Rule |
 |---|---|
-| `physical.*`, `emotional.*` | integers 0–100. One hour should move any of these by **at most ~15**, and usually far less |
+| `physical.*`, `emotional.*` | integers 0–100. One hour should move any of these by **at most ~15**, and usually far less. **Two exceptions:** eating may drop `hunger` as far as 10, and resting may raise `energy` freely. Otherwise you can never get ahead of your own body |
 | `personality.*` | integers 0–100, **±1 maximum per run**, and most runs should not move at all |
 | `finance.savings` | never below 0. Subtract every cost. You cannot buy what you cannot afford |
 | `career.skills.*` | 0–100, +1 to +3 for an hour of real effort. Add new keys as you learn new things |

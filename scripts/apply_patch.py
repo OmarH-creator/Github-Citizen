@@ -58,7 +58,12 @@ def validate_state(before, patch):
             if not 0 <= v <= 100:
                 raise Rejected(f"{group}.{k}={v} is outside 0-100")
             was = before[group].get(k)
-            if was is not None and abs(v - was) > MAX_MOVE[group]:
+            if was is None:
+                continue
+            # eating and resting are allowed to outrun the body; nothing else is
+            relief = (group == "physical" and
+                      ((k == "hunger" and v < was) or (k in ("energy", "sleep") and v > was)))
+            if not relief and abs(v - was) > MAX_MOVE[group]:
                 raise Rejected(
                     f"{group}.{k} moved {was}->{v}; at most {MAX_MOVE[group]} in one hour")
 
