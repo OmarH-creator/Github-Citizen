@@ -803,12 +803,13 @@ function drawSleeping(g, st, t, fit, bubbleVisible) {
   const bx = bed.x * T, by = bed.y * T, bw = (bed.w || 1) * T, bh = (bed.h || 1) * T;
 
   const breath = Math.sin(t / 2400) * 1.5;
-  const qx = bx + bw * 0.3, qTop = by + bh * 0.2, qBot = by + bh * 0.6, qRight = bx + bw - 3;
+  const qTop = by + bh * 0.2, qBot = by + bh * 0.6, qRight = bx + bw - 3;
 
   // ---- head, on the pillow ----
+  // (qx is set below, once we know where the head ends)
   const hw = 11 * PS, hh = 11 * PS;
   const px = bx + 7, pw = bw * 0.26, py = by + bh * 0.09, ph = bh * 0.24;
-  const hx = px + pw - hw * 0.72, hy = py + (ph - hh) / 2 + 1;
+  const hx = px + pw * 0.52, hy = py + (ph - hh) / 2 + 1;
 
   g.save();
   g.translate(hx, hy); g.scale(PS, PS);
@@ -824,15 +825,19 @@ function drawSleeping(g, st, t, fit, bubbleVisible) {
   // ---- the shape of a person under the quilt ----
   // shoulder, waist, hip, then taper to the feet. This is the whole trick: the quilt is not
   // a rectangle with a lump on it, it is draped over a silhouette.
+  // The quilt is pulled up to the chin and drapes away from there: shoulder, dip at the
+  // waist, hip, then a taper to the feet. Starting it low beside the head is what left a
+  // stretch of bare sheet where his neck should be.
+  const qx = hx + hw - 6;
   const contour = () => {
     g.beginPath();
     g.moveTo(qx, qBot);
-    g.lineTo(qx, qTop + 15);
-    g.quadraticCurveTo(qx + bw * 0.03, qTop + 1 + breath, qx + bw * 0.12, qTop + 3 + breath);
-    g.quadraticCurveTo(qx + bw * 0.2, qTop + 6 + breath, qx + bw * 0.27, qTop + 10);
-    g.quadraticCurveTo(qx + bw * 0.36, qTop + 4, qx + bw * 0.45, qTop + 7);
-    g.quadraticCurveTo(qx + bw * 0.55, qTop + 11, qRight - 14, qTop + 13);
-    g.quadraticCurveTo(qRight - 3, qTop + 14, qRight, qTop + 18);
+    g.lineTo(qx, qTop + 5);
+    g.quadraticCurveTo(qx + bw * 0.04, qTop + 1 + breath, qx + bw * 0.1, qTop + 4 + breath);
+    g.quadraticCurveTo(qx + bw * 0.17, qTop + 8 + breath, qx + bw * 0.24, qTop + 12);
+    g.quadraticCurveTo(qx + bw * 0.33, qTop + 6, qx + bw * 0.42, qTop + 9);
+    g.quadraticCurveTo(qx + bw * 0.52, qTop + 13, qRight - 16, qTop + 15);
+    g.quadraticCurveTo(qRight - 4, qTop + 16, qRight, qTop + 20);
     g.lineTo(qRight, qBot);
     g.closePath();
   };
