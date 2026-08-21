@@ -282,42 +282,55 @@ function codeLines(g, x, y, w, h, t, colour, seed) {
   }
 }
 
+/* ================= bedding ================= */
+// One palette and one painter, so an empty bed and a slept-in bed are the same quilt.
+const QUILT = ["#8fa9c6", "#c47f68", "#dcc48c", "#7d96b3", "#a8899f", "#9fb4c9"];
+
+function patchwork(g, x, y, w, h, cell = 17, jitter = 0) {
+  const cols = Math.max(3, Math.round(w / cell)), rows = Math.max(2, Math.round(h / cell));
+  const cw = w / cols, ch = h / rows;
+  for (let r = 0; r < rows; r++)
+    for (let c = 0; c < cols; c++) {
+      g.fillStyle = QUILT[(r * 3 + c * 2 + (r % 2)) % QUILT.length];
+      g.fillRect(x + c * cw, y + r * ch + jitter, cw + 0.6, ch + 0.6);
+      g.fillStyle = "rgba(255,255,255,.10)";                       // light catches the seam
+      g.fillRect(x + c * cw, y + r * ch + jitter, cw, 1);
+      g.fillStyle = "rgba(0,0,0,.13)";                             // and the fold under it
+      g.fillRect(x + c * cw, y + (r + 1) * ch - 1 + jitter, cw, 1);
+      g.fillRect(x + (c + 1) * cw - 1, y + r * ch + jitter, 1, ch);
+    }
+}
+
 /* ================= furniture ================= */
 // Each takes (g, x, y, w, h, o, t, st). y is the TOP of the object in pixels.
 const OBJ = {
-  bed(g, x, y, w, h) {
-    // Geometry other code depends on: sheet from y+0.16h, quilt starts at x+0.32w.
-    g.fillStyle = "#7a5330"; g.fillRect(x - 4, y - 8, 8, h * 0.7);            // headboard post
-    g.fillStyle = "#8c6039"; g.fillRect(x - 4, y - 8, 8, 5);
+  bed(g, x, y, w, h, o, t, st) {
+    // Geometry the sleeping pose depends on:
+    //   mattress top  y + 0.16h      quilt band  y + 0.20h .. y + 0.60h
+    //   pillow        x + 7 .. x + 7 + 0.26w
+    g.fillStyle = "#7a5330"; g.fillRect(x - 5, y - 10, 9, h * 0.74);          // headboard post
+    g.fillStyle = "#8c6039"; g.fillRect(x - 5, y - 10, 9, 6);
     g.fillStyle = "#5e3f26"; g.fillRect(x, y + h * 0.55, w, h * 0.42);        // frame
     g.fillStyle = "#6f4b2e"; g.fillRect(x, y + h * 0.55, w, 6);
     g.fillStyle = "#4a3120";
-    g.fillRect(x + 4, y + h * 0.94, 7, h * 0.14); g.fillRect(x + w - 12, y + h * 0.94, 7, h * 0.14);
-    g.fillStyle = "#f1eee4"; g.fillRect(x + 3, y + h * 0.16, w - 6, h * 0.44);  // sheet
-    g.fillStyle = "#ddd8cb"; g.fillRect(x + 3, y + h * 0.56, w - 6, 5);
+    g.fillRect(x + 5, y + h * 0.94, 8, h * 0.16); g.fillRect(x + w - 13, y + h * 0.94, 8, h * 0.16);
 
-    const qx = x + w * 0.32, qw = w * 0.68 - 3, qy = y + h * 0.2, qh = h * 0.4;
-    const quilt = ["#8fa9c6", "#c98a72", "#dcc48c", "#7d96b3", "#a8899f", "#b9c4d4"];
-    const cols = Math.max(4, Math.round(qw / 15)), rows = 3;
-    for (let r = 0; r < rows; r++)
-      for (let c = 0; c < cols; c++) {
-        const cw = qw / cols, ch = qh / rows;
-        g.fillStyle = quilt[(r * 3 + c * 2) % quilt.length];
-        g.fillRect(qx + c * cw, qy + r * ch, cw - 1, ch - 1);
-        g.fillStyle = "rgba(255,255,255,.13)"; g.fillRect(qx + c * cw, qy + r * ch, cw - 1, 1.5);
-        g.fillStyle = "rgba(0,0,0,.12)"; g.fillRect(qx + c * cw, qy + (r + 1) * ch - 2.5, cw - 1, 1.5);
-      }
-    g.strokeStyle = "rgba(255,255,255,.2)"; g.lineWidth = 0.5;                 // stitching
-    for (let c = 1; c < cols; c++) {
-      g.beginPath(); g.moveTo(qx + c * (qw / cols), qy); g.lineTo(qx + c * (qw / cols), qy + qh); g.stroke();
+    g.fillStyle = "#ddd6c6"; g.fillRect(x + 3, y + h * 0.16, w - 6, h * 0.44);   // under-sheet
+    g.fillStyle = "#cfc7b5"; g.fillRect(x + 3, y + h * 0.56, w - 6, 5);
+
+    const px = x + 7, pw = w * 0.26, py = y + h * 0.09, ph = h * 0.24;           // pillow
+    g.fillStyle = "rgba(0,0,0,.12)"; g.fillRect(px + 3, py + 4, pw - 2, ph - 2);
+    g.fillStyle = "#f8f5ee"; g.fillRect(px, py, pw, ph);
+    g.fillStyle = "#e7e2d6"; g.fillRect(px + 4, py + ph * 0.55, pw - 8, ph * 0.3);
+
+    // When Nova is in it, drawSleeping paints the quilt draped over a body instead --
+    // drawing a flat one here as well is what made it look like a lump on a flat sheet.
+    const occupied = st && /^sleep/i.test(st.activity.current) && st.activity.location === "bed";
+    if (!occupied) {
+      patchwork(g, x + w * 0.3, y + h * 0.2, w * 0.7 - 3, h * 0.4);
+      g.fillStyle = "rgba(255,255,255,.16)"; g.fillRect(x + w * 0.3, y + h * 0.2, w * 0.7 - 3, 3);
+      g.fillStyle = "rgba(0,0,0,.2)"; g.fillRect(x + w * 0.3, y + h * 0.6 - 3, w * 0.7 - 3, 3);
     }
-    g.fillStyle = "rgba(255,255,255,.18)"; g.fillRect(qx, qy, qw, 3);
-    g.fillStyle = "rgba(0,0,0,.18)"; g.fillRect(qx, qy + qh - 3, qw, 3);
-
-    g.fillStyle = "#f7f4ec"; g.fillRect(x + 5, y + h * 0.07, w * 0.29, h * 0.27);   // pillow
-    g.fillStyle = "#e6e1d4"; g.fillRect(x + 8, y + h * 0.1, w * 0.21, h * 0.11);
-    g.fillStyle = "#c9707a"; g.fillRect(x + 8, y + h * 0.03, w * 0.16, h * 0.11);   // small cushion
-    g.fillStyle = "#b25f6a"; g.fillRect(x + 10, y + h * 0.05, w * 0.11, h * 0.06);
   },
   desk(g, x, y, w, h) {
     g.fillStyle = "#b3854f"; g.fillRect(x, y, w, 4);                          // lit top edge
@@ -788,63 +801,65 @@ function drawSleeping(g, st, t, fit, bubbleVisible) {
   const bed = st.apartment.objects.find((o) => o.kind === "bed");
   if (!bed) return null;
   const bx = bed.x * T, by = bed.y * T, bw = (bed.w || 1) * T, bh = (bed.h || 1) * T;
-  const breath = Math.sin(t / 2100) * 1.3;
 
-  const headW = 11 * PS, headH = 11 * PS;
-  const hx = bx + 8 + (bw * 0.28 - headW) / 2;         // centred on the pillow
-  const hy = by + bh * 0.08 + (bh * 0.26 - headH) / 2;
-  const qTop = by + bh * 0.2, qBottom = by + bh * 0.6;
-  const shoulderX = hx + headW - 4;
+  const breath = Math.sin(t / 2400) * 1.5;
+  const qx = bx + bw * 0.3, qTop = by + bh * 0.2, qBot = by + bh * 0.6, qRight = bx + bw - 3;
 
-  // head, resting on its side
+  // ---- head, on the pillow ----
+  const hw = 11 * PS, hh = 11 * PS;
+  const px = bx + 7, pw = bw * 0.26, py = by + bh * 0.09, ph = bh * 0.24;
+  const hx = px + pw - hw * 0.72, hy = py + (ph - hh) / 2 + 1;
+
   g.save();
   g.translate(hx, hy); g.scale(PS, PS);
+  g.fillStyle = "rgba(0,0,0,.10)"; g.fillRect(0, 8, 12, 3);            // dent in the pillow
   g.fillStyle = fit.skin; g.fillRect(0, 1, 11, 9);
-  g.fillStyle = rgb(fit.skin, 0.86); g.fillRect(0, 8, 11, 2);
-  g.fillStyle = fit.hair; g.fillRect(-1, -2, 13, 6); g.fillRect(-1, -2, 4, 7);
-  g.fillStyle = rgb(fit.hair, 1.3); g.fillRect(1, -1, 5, 2);
-  g.fillStyle = "#221c2a"; g.fillRect(3, 5, 3, 1); g.fillRect(8, 5, 2, 1);
-  g.fillStyle = rgb("#c9585f", 1, 0.26); g.fillRect(2, 7, 2, 1);
+  g.fillStyle = rgb(fit.skin, 0.88); g.fillRect(0, 8, 11, 2);
+  g.fillStyle = fit.hair; g.fillRect(-1, -2, 13, 6); g.fillRect(-1, -2, 4, 8);
+  g.fillStyle = rgb(fit.hair, 1.28); g.fillRect(1, -1, 5, 2);
+  g.fillStyle = "#221c2a"; g.fillRect(3, 5, 3, 1); g.fillRect(8, 5, 2, 1);   // eyes, shut
+  g.fillStyle = rgb("#c9585f", 1, 0.24); g.fillRect(2, 7, 2, 1);
   g.restore();
 
-  // the quilt, pulled up over a shoulder that rises and falls
-  g.save();
-  g.beginPath();
-  g.moveTo(shoulderX, qBottom);
-  g.lineTo(shoulderX, qTop + 13);
-  g.quadraticCurveTo(shoulderX + bw * 0.06, qTop + 1 + breath,
-                     shoulderX + bw * 0.2, qTop + 5 + breath);
-  g.quadraticCurveTo(shoulderX + bw * 0.34, qTop + 10, bx + bw - 3, qTop + 7);
-  g.lineTo(bx + bw - 3, qBottom);
-  g.closePath();
-  g.clip();
+  // ---- the shape of a person under the quilt ----
+  // shoulder, waist, hip, then taper to the feet. This is the whole trick: the quilt is not
+  // a rectangle with a lump on it, it is draped over a silhouette.
+  const contour = () => {
+    g.beginPath();
+    g.moveTo(qx, qBot);
+    g.lineTo(qx, qTop + 15);
+    g.quadraticCurveTo(qx + bw * 0.03, qTop + 1 + breath, qx + bw * 0.12, qTop + 3 + breath);
+    g.quadraticCurveTo(qx + bw * 0.2, qTop + 6 + breath, qx + bw * 0.27, qTop + 10);
+    g.quadraticCurveTo(qx + bw * 0.36, qTop + 4, qx + bw * 0.45, qTop + 7);
+    g.quadraticCurveTo(qx + bw * 0.55, qTop + 11, qRight - 14, qTop + 13);
+    g.quadraticCurveTo(qRight - 3, qTop + 14, qRight, qTop + 18);
+    g.lineTo(qRight, qBot);
+    g.closePath();
+  };
 
-  const quilt = ["#8fa9c6", "#c98a72", "#d9c187", "#7d96b3", "#a8899f"];
-  const qw = bx + bw - 3 - shoulderX, qh = qBottom - qTop;
-  const cols = Math.max(3, Math.round(qw / 17));
-  for (let r = 0; r < 3; r++)
-    for (let c = 0; c < cols; c++) {
-      g.fillStyle = quilt[(r * 3 + c * 2) % quilt.length];
-      g.fillRect(shoulderX + c * (qw / cols), qTop + r * (qh / 3) + breath * 0.4,
-                 qw / cols - 1.5, qh / 3 - 1.5);
-    }
-  g.fillStyle = "rgba(255,255,255,.16)";
-  g.fillRect(shoulderX, qTop + breath, qw, 5);
+  g.save(); contour(); g.clip();
+  patchwork(g, qx - 2, qTop - 4 + breath * 0.5, qRight - qx + 4, qBot - qTop + 8);
+  const shade = g.createLinearGradient(0, qTop, 0, qBot);           // roll of the fabric
+  shade.addColorStop(0, "rgba(255,255,255,.12)");
+  shade.addColorStop(0.45, "rgba(255,255,255,0)");
+  shade.addColorStop(1, "rgba(0,0,0,.22)");
+  g.fillStyle = shade; g.fillRect(qx - 2, qTop - 4, qRight - qx + 4, qBot - qTop + 8);
   g.restore();
 
-  g.strokeStyle = "rgba(0,0,0,.18)"; g.lineWidth = 1.5;   // the fold along the top edge
-  g.beginPath();
-  g.moveTo(shoulderX, qTop + 13);
-  g.quadraticCurveTo(shoulderX + bw * 0.06, qTop + 1 + breath,
-                     shoulderX + bw * 0.2, qTop + 5 + breath);
-  g.quadraticCurveTo(shoulderX + bw * 0.34, qTop + 10, bx + bw - 3, qTop + 7);
-  g.stroke();
+  contour();                                                        // the folded top edge
+  g.strokeStyle = "rgba(255,255,255,.16)"; g.lineWidth = 1.2; g.stroke();
+  // a soft shadow where the quilt meets the pillow, instead of a folded paper corner
+  g.save(); contour(); g.clip();
+  const tuck = g.createLinearGradient(qx - 2, 0, qx + bw * 0.1, 0);
+  tuck.addColorStop(0, "rgba(0,0,0,.22)"); tuck.addColorStop(1, "rgba(0,0,0,0)");
+  g.fillStyle = tuck; g.fillRect(qx - 2, qTop - 4, bw * 0.12, qBot - qTop + 8);
+  g.restore();
 
   if (!bubbleVisible && (t % 9000) < 5000) {
     const p = (t % 9000) / 5000;
-    g.globalAlpha = Math.sin(p * Math.PI) * 0.55;
+    g.globalAlpha = Math.sin(p * Math.PI) * 0.5;
     g.fillStyle = "#ffffff"; g.font = "13px monospace";
-    g.fillText("z", hx + 34, hy - 8 - p * 22);
+    g.fillText("z", hx + hw + 6, hy - 6 - p * 22);
     g.globalAlpha = 1;
   }
   return [hx, hy];

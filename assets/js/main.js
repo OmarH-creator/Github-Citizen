@@ -1,4 +1,4 @@
-import { render, hitTest, SCALE } from "./room.js?v=9";
+import { render, hitTest, SCALE } from "./room.js?v=10";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
