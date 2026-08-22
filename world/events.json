@@ -377,6 +377,13 @@
       "time": "02:40",
       "kind": "body",
       "text": "Got out of bed and ate a proper meal because hunger was at the ceiling and health had fallen to 38."
+    },
+    {
+      "tick": 359,
+      "day": 16,
+      "time": "05:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
     }
   ]
 }

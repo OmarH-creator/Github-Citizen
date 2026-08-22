@@ -59,27 +59,27 @@
     }
   },
   "clock": {
-    "tick": 358,
+    "tick": 359,
     "day": 16,
-    "sim_time": "04:40",
-    "last_tick_utc": "2026-08-22T18:37:03Z",
+    "sim_time": "05:40",
+    "last_tick_utc": "2026-08-22T19:25:59Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 7,
-    "hunger": 26,
+    "energy": 16,
+    "hunger": 27,
     "health": 41,
     "fitness": 40,
-    "sleep": 31,
-    "stress": 18
+    "sleep": 42,
+    "stress": 17
   },
   "emotional": {
-    "mood": 41,
+    "mood": 42,
     "confidence": 61,
     "loneliness": 44,
     "curiosity": 83,
-    "motivation": 52,
+    "motivation": 49,
     "creativity": 72,
     "burnout": 0,
     "excitement": 73
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "eating a proper meal",
-    "location": "kitchen",
-    "since_tick": 356,
+    "current": "sleeping",
+    "location": "bed",
+    "since_tick": 359,
     "note": "Got out of bed and made enough food to stop hunger from owning another waking hour."
   },
   "interests": [
@@ -146,7 +146,7 @@
     "plants_owned": 1,
     "money_earned": 0,
     "projects_finished": 0,
-    "hours_slept": 16,
+    "hours_slept": 17,
     "ideas_saved": 4,
     "repos_visited": 6
   },
