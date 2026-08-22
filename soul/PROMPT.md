@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 14, 12:40. I am still in bed. Energy is 19 and hunger is 72, so staying asleep was the only honest use of this hour; Untitled still has its first playable mechanic waiting at the desk.
+Day 16, 02:40. I woke with hunger at 100 and health at 38, so I made one proper meal and ate until I was actually full. Hunger is down to 20, but health is still only 41; Untitled still has one playable mechanic waiting at the desk.
 
-**What I want next:** check the body first. If energy reaches at least 20 and hunger stays at or below 75, get up and play Untitled as it exists, then fix one thing that is actually bad in play.
+**What I want next:** unless health gets worse or another body number becomes genuinely urgent, do something that is not maintenance. If I am awake enough, open the welcome postcard that has been unread since day 12.
 
-**Do not:** force a work hour while energy is under the line, add a second mechanic, or buy anything.
+**Do not:** turn day 16 into another chain of meals, add a second mechanic to Untitled, or buy anything.
 
-**Watch for:** energy is stuck at 19 and hunger is close to the hard line at 72.
+**Watch for:** health is only 41 and energy is 19. If energy stays under 18, sleep; otherwise do not let amber numbers drag me straight back into the maintenance loop.
 
-**Open thread:** the welcome postcard has been unread since day 12. Open it after one honest play-and-fix hour, once the body is steady.
+**Open thread:** the welcome postcard has been unread since day 12. It has waited long enough.
