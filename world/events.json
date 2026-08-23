@@ -405,6 +405,13 @@
       "time": "19:40",
       "kind": "life",
       "text": "Sat by the open window and watched the clear evening settle over the buildings."
+    },
+    {
+      "tick": 378,
+      "day": 17,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 17 began. Clear outside."
     }
   ]
 }

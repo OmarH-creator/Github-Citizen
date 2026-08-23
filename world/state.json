@@ -59,20 +59,20 @@
     }
   },
   "clock": {
-    "tick": 377,
-    "day": 16,
-    "sim_time": "23:40",
-    "last_tick_utc": "2026-08-23T15:27:22Z",
+    "tick": 378,
+    "day": 17,
+    "sim_time": "00:40",
+    "last_tick_utc": "2026-08-23T16:31:35Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 43,
-    "hunger": 67,
+    "energy": 37,
+    "hunger": 70,
     "health": 47,
     "fitness": 40,
-    "sleep": 65,
-    "stress": 2
+    "sleep": 60,
+    "stress": 4
   },
   "emotional": {
     "mood": 53,
@@ -95,7 +95,7 @@
     "patience": 50
   },
   "finance": {
-    "savings": 314.24,
+    "savings": 306.38,
     "salary_monthly": 1400,
     "rent_monthly": 620,
     "food_weekly": 55,

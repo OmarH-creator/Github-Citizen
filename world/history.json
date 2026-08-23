@@ -1604,6 +1604,153 @@
           "h": 0.6
         }
       ]
+    },
+    {
+      "day": 16,
+      "date": "2026-08-23",
+      "headline": "watching the evening from the window",
+      "weather": "clear",
+      "occupation": "Intern",
+      "savings": 306,
+      "mood": 53,
+      "objects": [
+        {
+          "id": "bed",
+          "kind": "bed",
+          "x": 2,
+          "y": 8,
+          "w": 5,
+          "h": 3
+        },
+        {
+          "id": "counter",
+          "kind": "counter",
+          "x": 19,
+          "y": 8,
+          "w": 5,
+          "h": 2
+        },
+        {
+          "id": "desk",
+          "kind": "desk",
+          "x": 7,
+          "y": 9,
+          "w": 6,
+          "h": 2
+        },
+        {
+          "id": "laptop",
+          "kind": "laptop",
+          "x": 10,
+          "y": 9,
+          "w": 2,
+          "h": 1
+        },
+        {
+          "id": "mug",
+          "kind": "mug",
+          "x": 9,
+          "y": 9,
+          "w": 1,
+          "h": 1
+        },
+        {
+          "id": "lamp",
+          "kind": "lamp",
+          "x": 14.4,
+          "y": 8.5,
+          "w": 1,
+          "h": 4.6
+        },
+        {
+          "id": "clock",
+          "kind": "clock",
+          "x": 12.9,
+          "y": 1.2,
+          "w": 1.7,
+          "h": 1.7
+        },
+        {
+          "id": "books",
+          "kind": "books",
+          "x": 0.7,
+          "y": 11.5,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 10,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "poster",
+          "kind": "poster",
+          "x": 15.4,
+          "y": 1.1,
+          "w": 2.8,
+          "h": 3.6
+        },
+        {
+          "id": "rug",
+          "kind": "rug",
+          "x": 6,
+          "y": 11,
+          "w": 8,
+          "h": 2
+        },
+        {
+          "id": "plant",
+          "kind": "plant",
+          "x": 20.7,
+          "y": 10.2,
+          "w": 2,
+          "h": 3.2
+        },
+        {
+          "id": "coffee_machine",
+          "kind": "coffee_machine",
+          "x": 21,
+          "y": 6,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "id": "monitor",
+          "kind": "monitor",
+          "x": 7,
+          "y": 9,
+          "w": 3,
+          "h": 1
+        },
+        {
+          "id": "shelf_unit",
+          "kind": "shelf_unit",
+          "x": 11.4,
+          "y": 2.9,
+          "w": 3.4,
+          "h": 4.1
+        },
+        {
+          "id": "desk_lamp",
+          "kind": "desk_lamp",
+          "x": 12.5,
+          "y": 9,
+          "w": 1.1,
+          "h": 1
+        },
+        {
+          "id": "keyboard",
+          "kind": "keyboard",
+          "x": 8.2,
+          "y": 9.15,
+          "w": 3,
+          "h": 0.6
+        }
+      ]
     }
   ]
 }
