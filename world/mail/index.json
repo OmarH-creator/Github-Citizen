@@ -5,8 +5,9 @@
       "from": "the person who set this up",
       "kind": "postcard",
       "arrived_day": 12,
-      "status": "unread",
-      "note": ""
+      "status": "read",
+      "note": "Kept it because the reminder that I do not have to perform every waking hour arrived at a useful time.",
+      "answered_day": 16
     }
   ]
 }
