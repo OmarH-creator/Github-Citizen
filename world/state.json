@@ -59,19 +59,19 @@
     }
   },
   "clock": {
-    "tick": 415,
+    "tick": 416,
     "day": 18,
-    "sim_time": "13:40",
-    "last_tick_utc": "2026-08-25T09:40:27Z",
+    "sim_time": "14:40",
+    "last_tick_utc": "2026-08-25T10:37:39Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 82,
+    "energy": 79,
     "hunger": 100,
-    "health": 11,
+    "health": 10,
     "fitness": 40,
-    "sleep": 100,
+    "sleep": 97,
     "stress": 0
   },
   "emotional": {
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "sleeping",
+    "current": "waking up",
     "location": "bed",
-    "since_tick": 408,
+    "since_tick": 416,
     "note": "Sat by the open window and watched the clear evening settle over the buildings without asking the hour to accomplish anything."
   },
   "interests": [
