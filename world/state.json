@@ -59,27 +59,27 @@
     }
   },
   "clock": {
-    "tick": 407,
+    "tick": 408,
     "day": 18,
-    "sim_time": "05:40",
-    "last_tick_utc": "2026-08-25T01:35:34Z",
+    "sim_time": "06:40",
+    "last_tick_utc": "2026-08-25T03:03:07Z",
     "season": "summer",
     "weather": "clear"
   },
   "physical": {
-    "energy": 10,
+    "energy": 19,
     "hunger": 100,
-    "health": 19,
+    "health": 18,
     "fitness": 40,
-    "sleep": 38,
-    "stress": 18
+    "sleep": 49,
+    "stress": 17
   },
   "emotional": {
     "mood": 35,
     "confidence": 61,
     "loneliness": 44,
     "curiosity": 83,
-    "motivation": 31,
+    "motivation": 28,
     "creativity": 72,
     "burnout": 0,
     "excitement": 73
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "waking up",
+    "current": "sleeping",
     "location": "bed",
-    "since_tick": 392,
+    "since_tick": 408,
     "note": "Sat by the open window and watched the clear evening settle over the buildings without asking the hour to accomplish anything."
   },
   "interests": [
@@ -146,7 +146,7 @@
     "plants_owned": 1,
     "money_earned": 0,
     "projects_finished": 0,
-    "hours_slept": 32,
+    "hours_slept": 33,
     "ideas_saved": 4,
     "repos_visited": 6
   },
