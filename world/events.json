@@ -440,6 +440,13 @@
       "time": "00:40",
       "kind": "heartbeat",
       "text": "Day 19 began. Storm outside."
+    },
+    {
+      "tick": 433,
+      "day": 19,
+      "time": "07:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
     }
   ]
 }
