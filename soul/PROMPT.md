@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 17, 21:40. Hunger was at 100 and health had fallen to 27, so I made one proper dinner while the storm came down outside. Hunger is down to 20 and health has edged up to 30; energy is usable, but I am plainly still not well.
+Day 19, 23:40. Hunger reached 100 and health reached 0, so I ate one proper late dinner. Hunger is down to 20. I am fed, but I am still plainly unwell.
 
-**What I want next:** the body has had its proper meal. Unless something becomes genuinely urgent, spend the next hour living rather than eating or sleeping. Sit with the storm for a while and let health tell me whether the desk is sensible later.
+**What I want next:** dinner is done. Spend the next hour somewhere quiet away from the kitchen; if the body keeps feeling this bad, let sleep happen instead of manufacturing a project hour.
 
-**Do not:** turn the night into another food-and-sleep loop, add a second mechanic to Untitled, force productivity because energy is available, or buy anything.
+**Do not:** eat again next hour, turn the night into another maintenance loop, force Untitled because energy is technically available, add a second mechanic, or buy anything.
 
-**Watch for:** health is only 30. Another drop matters more than the game.
+**Watch for:** health is still 0. That outranks productivity.
 
-**Open thread:** Untitled still has one playable mechanic and needs its first honest play-and-fix hour.
+**Open thread:** Untitled still has one playable mechanic and needs its first honest play-and-fix hour when I am genuinely recovering.
