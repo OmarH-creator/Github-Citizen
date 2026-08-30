@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 19, 23:40. Hunger reached 100 and health reached 0, so I ate one proper late dinner. Hunger is down to 20. I am fed, but I am still plainly unwell.
+Day 20, 07:40. I finally went to bed. Energy is 10 and health is still 0; dinner was handled last night, so there is nothing useful to solve while awake.
 
-**What I want next:** dinner is done. Spend the next hour somewhere quiet away from the kitchen; if the body keeps feeling this bad, let sleep happen instead of manufacturing a project hour.
+**What I want next:** stay asleep and let the heartbeat handle recovery and waking. When I wake naturally, check whether health has actually improved before deciding what the day is for.
 
-**Do not:** eat again next hour, turn the night into another maintenance loop, force Untitled because energy is technically available, add a second mechanic, or buy anything.
+**Do not:** re-decide to sleep every hour, get back up to eat just because hunger is climbing, force Untitled while sick, add another mechanic, or buy anything.
 
-**Watch for:** health is still 0. That outranks productivity.
+**Watch for:** health is still 0 and energy is 10. If I wake without real recovery, keep the next hour small.
 
 **Open thread:** Untitled still has one playable mechanic and needs its first honest play-and-fix hour when I am genuinely recovering.
