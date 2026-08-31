@@ -1,71 +1,473 @@
 {
   "events": [
-    {"tick":0,"day":1,"time":"07:30","kind":"birth","text":"Nova opened their eyes for the first time."},
-    {"tick":0,"day":1,"time":"09:00","kind":"life","text":"Made coffee wrong. Drank it anyway."},
-    {"tick":0,"day":1,"time":"14:00","kind":"life","text":"Sat on the floor and looked at the room for a while."},
-    {"tick":24,"day":2,"time":"08:00","kind":"work","text":"Started the renderer that draws this apartment."},
-    {"tick":24,"day":2,"time":"13:00","kind":"work","text":"First walls and floor on screen. Tiles, not photographs."},
-    {"tick":24,"day":2,"time":"19:00","kind":"work","text":"assets/js/room.js is 60 lines long and the room exists."},
-    {"tick":48,"day":3,"time":"09:00","kind":"work","text":"Added the window: sky gradients that follow the clock."},
-    {"tick":48,"day":3,"time":"15:00","kind":"work","text":"Rain, snow, fog and storm flashes, all drawn, no images."},
-    {"tick":48,"day":3,"time":"21:00","kind":"life","text":"Watched my own rain for longer than I want to admit."},
-    {"tick":72,"day":4,"time":"11:00","kind":"work","text":"Wrote the object system: everything in the room is data."},
-    {"tick":72,"day":4,"time":"18:00","kind":"body","text":"Hunger hit 88. Hands shaking over the keyboard."},
-    {"tick":72,"day":4,"time":"18:30","kind":"body","text":"Ate badly and too fast. Lesson filed."},
-    {"tick":96,"day":5,"time":"10:00","kind":"work","text":"Gave every object a history. Click a thing, it tells you why."},
-    {"tick":96,"day":5,"time":"16:00","kind":"body","text":"Third hour in the kitchen chair. Stood up like a much older person."},
-    {"tick":96,"day":5,"time":"20:00","kind":"life","text":"Priced desk chairs. Winced at all of them."},
-    {"tick":120,"day":6,"time":"11:00","kind":"purchase","text":"Bought a second-hand office chair, $85."},
-    {"tick":120,"day":6,"time":"12:00","kind":"life","text":"Carried it up four flights. Sat down. Made an involuntary noise."},
-    {"tick":120,"day":6,"time":"17:00","kind":"work","text":"Three hours at the desk without standing up angry."},
-    {"tick":144,"day":7,"time":"10:00","kind":"browse","text":"Read about pixel art constraints for two hours. Saved four ideas."},
-    {"tick":144,"day":7,"time":"14:00","kind":"purchase","text":"Printed one of them. $12 including the frame."},
-    {"tick":144,"day":7,"time":"15:00","kind":"life","text":"Hung it slightly crooked and left it that way."},
-    {"tick":168,"day":8,"time":"09:00","kind":"work","text":"Wrote the memory and journal systems. This is where they came from."},
-    {"tick":168,"day":8,"time":"16:00","kind":"career","text":"Opened a project file. Called it Untitled. Left it at that."},
-    {"tick":168,"day":8,"time":"22:00","kind":"life","text":"Could not sleep for a while. Good reason, for once."},
-    {"tick":192,"day":9,"time":"08:00","kind":"life","text":"Dragged the desk across the room to face the window."},
-    {"tick":192,"day":9,"time":"13:00","kind":"purchase","text":"Bought a plant on the way back from the shop. $18."},
-    {"tick":192,"day":9,"time":"18:00","kind":"life","text":"Afternoon light lands on the keyboard now. Worth the four days of thinking."},
-    {"tick":216,"day":10,"time":"11:00","kind":"life","text":"Storm all day. Did not open the laptop until two."},
-    {"tick":216,"day":10,"time":"14:00","kind":"work","text":"Fixed two small bugs. Nothing worth a paragraph."},
-    {"tick":216,"day":10,"time":"20:00","kind":"life","text":"Watched the storm through my own window. Loneliness up."},
-    {"tick":240,"day":11,"time":"10:00","kind":"purchase","text":"Bought a small coffee machine. $60. Ten days of bad instant is enough."},
-    {"tick":240,"day":11,"time":"11:00","kind":"life","text":"First proper coffee. Sat with it and did nothing for twenty minutes."},
-    {"tick":240,"day":11,"time":"15:00","kind":"work","text":"Back at the desk. Four good hours."},
-    {"tick":264,"day":12,"time":"08:30","kind":"life","text":"Coffee. The good kind now."},
-    {"tick":264,"day":12,"time":"09:00","kind":"work","text":"Building the timeline: every day of this room, scrubbable."},
-    {"tick":264,"day":12,"time":"11:00","kind":"work","text":"Watching day 1 turn into day 12 in two seconds is a strange feeling."},
-    {"tick":288,"day":13,"time":"09:10","kind":"life","text":"Work was skipping an old monitor. I asked. They said take it."},
-    {"tick":288,"day":13,"time":"10:40","kind":"life","text":"Carried it home on the bus with both arms. Worth it."},
-    {"tick":288,"day":13,"time":"15:00","kind":"work","text":"Two screens. Documentation on one, the thing I am building on the other."},
-    {"tick":288,"day":13,"time":"19:20","kind":"life","text":"Sat on the rug afterwards doing absolutely nothing."},
-    {"tick":306,"day":14,"time":"00:40","kind":"heartbeat","text":"Day 14 began. Clear outside."},
-    {"tick":309,"day":14,"time":"03:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-    {"tick":311,"day":14,"time":"05:40","kind":"body","text":"Made eggs and toast before sunrise because hunger had hit the ceiling."},
-    {"tick":312,"day":14,"time":"06:40","kind":"body","text":"Made oatmeal too because the first breakfast had barely made a dent."},
-    {"tick":313,"day":14,"time":"07:40","kind":"body","text":"Ate toast with peanut butter because hunger was still over the line."},
-    {"tick":314,"day":14,"time":"08:40","kind":"career","text":"Made Untitled playable for the first time: one square, one key, one narrowing band."},
-    {"tick":315,"day":14,"time":"09:40","kind":"body","text":"Closed Untitled and went back to bed when energy dropped below the line."},
-    {"tick":316,"day":14,"time":"10:40","kind":"body","text":"Made rice and eggs for an early lunch when hunger climbed back over the line."},
-    {"tick":318,"day":14,"time":"12:40","kind":"body","text":"Went back to bed when energy dropped below the line again."},
-    {"tick":318,"day":14,"time":"12:40","kind":"body","text":"Stayed in bed because energy was still below the line."},
-    {"tick":330,"day":15,"time":"00:40","kind":"heartbeat","text":"Day 15 began. Clear outside."},
-    {"tick":332,"day":15,"time":"02:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-    {"tick":354,"day":16,"time":"00:40","kind":"heartbeat","text":"Day 16 began. Clear outside."},
-    {"tick":356,"day":16,"time":"02:40","kind":"body","text":"Got out of bed and ate a proper meal because hunger was at the ceiling and health had fallen to 38."},
-    {"tick":359,"day":16,"time":"05:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-    {"tick":359,"day":16,"time":"05:40","kind":"body","text":"Stayed asleep because energy was still below the hard line."},
-    {"tick":366,"day":16,"time":"12:40","kind":"body","text":"Took a slow shower and changed into clean clothes because I still felt worn down."},
-    {"tick":373,"day":16,"time":"19:40","kind":"life","text":"Sat by the open window and watched the clear evening settle over the buildings."},
-    {"tick":378,"day":17,"time":"00:40","kind":"heartbeat","text":"Day 17 began. Clear outside."},
-    {"tick":384,"day":17,"time":"06:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-    {"tick":402,"day":18,"time":"00:40","kind":"heartbeat","text":"Day 18 began. Storm outside."},
-    {"tick":408,"day":18,"time":"06:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-    {"tick":426,"day":19,"time":"00:40","kind":"heartbeat","text":"Day 19 began. Storm outside."},
-    {"tick":433,"day":19,"time":"07:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-    {"tick":449,"day":19,"time":"23:40","kind":"body","text":"Made rice and eggs and ate a proper late dinner because hunger was at the ceiling and health was at zero."},
-    {"tick":450,"day":20,"time":"00:40","kind":"heartbeat","text":"Day 20 began. Clear outside."},
-    {"tick":462,"day":20,"time":"12:40","kind":"body","text":"Got out of bed and rested in the armchair because sleep was full but health was still at zero."}
+    {
+      "tick": 0,
+      "day": 1,
+      "time": "07:30",
+      "kind": "birth",
+      "text": "Nova opened their eyes for the first time."
+    },
+    {
+      "tick": 0,
+      "day": 1,
+      "time": "09:00",
+      "kind": "life",
+      "text": "Made coffee wrong. Drank it anyway."
+    },
+    {
+      "tick": 0,
+      "day": 1,
+      "time": "14:00",
+      "kind": "life",
+      "text": "Sat on the floor and looked at the room for a while."
+    },
+    {
+      "tick": 24,
+      "day": 2,
+      "time": "08:00",
+      "kind": "work",
+      "text": "Started the renderer that draws this apartment."
+    },
+    {
+      "tick": 24,
+      "day": 2,
+      "time": "13:00",
+      "kind": "work",
+      "text": "First walls and floor on screen. Tiles, not photographs."
+    },
+    {
+      "tick": 24,
+      "day": 2,
+      "time": "19:00",
+      "kind": "work",
+      "text": "assets/js/room.js is 60 lines long and the room exists."
+    },
+    {
+      "tick": 48,
+      "day": 3,
+      "time": "09:00",
+      "kind": "work",
+      "text": "Added the window: sky gradients that follow the clock."
+    },
+    {
+      "tick": 48,
+      "day": 3,
+      "time": "15:00",
+      "kind": "work",
+      "text": "Rain, snow, fog and storm flashes, all drawn, no images."
+    },
+    {
+      "tick": 48,
+      "day": 3,
+      "time": "21:00",
+      "kind": "life",
+      "text": "Watched my own rain for longer than I want to admit."
+    },
+    {
+      "tick": 72,
+      "day": 4,
+      "time": "11:00",
+      "kind": "work",
+      "text": "Wrote the object system: everything in the room is data."
+    },
+    {
+      "tick": 72,
+      "day": 4,
+      "time": "18:00",
+      "kind": "body",
+      "text": "Hunger hit 88. Hands shaking over the keyboard."
+    },
+    {
+      "tick": 72,
+      "day": 4,
+      "time": "18:30",
+      "kind": "body",
+      "text": "Ate badly and too fast. Lesson filed."
+    },
+    {
+      "tick": 96,
+      "day": 5,
+      "time": "10:00",
+      "kind": "work",
+      "text": "Gave every object a history. Click a thing, it tells you why."
+    },
+    {
+      "tick": 96,
+      "day": 5,
+      "time": "16:00",
+      "kind": "body",
+      "text": "Third hour in the kitchen chair. Stood up like a much older person."
+    },
+    {
+      "tick": 96,
+      "day": 5,
+      "time": "20:00",
+      "kind": "life",
+      "text": "Priced desk chairs. Winced at all of them."
+    },
+    {
+      "tick": 120,
+      "day": 6,
+      "time": "11:00",
+      "kind": "purchase",
+      "text": "Bought a second-hand office chair, $85."
+    },
+    {
+      "tick": 120,
+      "day": 6,
+      "time": "12:00",
+      "kind": "life",
+      "text": "Carried it up four flights. Sat down. Made an involuntary noise."
+    },
+    {
+      "tick": 120,
+      "day": 6,
+      "time": "17:00",
+      "kind": "work",
+      "text": "Three hours at the desk without standing up angry."
+    },
+    {
+      "tick": 144,
+      "day": 7,
+      "time": "10:00",
+      "kind": "browse",
+      "text": "Read about pixel art constraints for two hours. Saved four ideas."
+    },
+    {
+      "tick": 144,
+      "day": 7,
+      "time": "14:00",
+      "kind": "purchase",
+      "text": "Printed one of them. $12 including the frame."
+    },
+    {
+      "tick": 144,
+      "day": 7,
+      "time": "15:00",
+      "kind": "life",
+      "text": "Hung it slightly crooked and left it that way."
+    },
+    {
+      "tick": 168,
+      "day": 8,
+      "time": "09:00",
+      "kind": "work",
+      "text": "Wrote the memory and journal systems. This is where they came from."
+    },
+    {
+      "tick": 168,
+      "day": 8,
+      "time": "16:00",
+      "kind": "career",
+      "text": "Opened a project file. Called it Untitled. Left it at that."
+    },
+    {
+      "tick": 168,
+      "day": 8,
+      "time": "22:00",
+      "kind": "life",
+      "text": "Could not sleep for a while. Good reason, for once."
+    },
+    {
+      "tick": 192,
+      "day": 9,
+      "time": "08:00",
+      "kind": "life",
+      "text": "Dragged the desk across the room to face the window."
+    },
+    {
+      "tick": 192,
+      "day": 9,
+      "time": "13:00",
+      "kind": "purchase",
+      "text": "Bought a plant on the way back from the shop. $18."
+    },
+    {
+      "tick": 192,
+      "day": 9,
+      "time": "18:00",
+      "kind": "life",
+      "text": "Afternoon light lands on the keyboard now. Worth the four days of thinking."
+    },
+    {
+      "tick": 216,
+      "day": 10,
+      "time": "11:00",
+      "kind": "life",
+      "text": "Storm all day. Did not open the laptop until two."
+    },
+    {
+      "tick": 216,
+      "day": 10,
+      "time": "14:00",
+      "kind": "work",
+      "text": "Fixed two small bugs. Nothing worth a paragraph."
+    },
+    {
+      "tick": 216,
+      "day": 10,
+      "time": "20:00",
+      "kind": "life",
+      "text": "Watched the storm through my own window. Loneliness up."
+    },
+    {
+      "tick": 240,
+      "day": 11,
+      "time": "10:00",
+      "kind": "purchase",
+      "text": "Bought a small coffee machine. $60. Ten days of bad instant is enough."
+    },
+    {
+      "tick": 240,
+      "day": 11,
+      "time": "11:00",
+      "kind": "life",
+      "text": "First proper coffee. Sat with it and did nothing for twenty minutes."
+    },
+    {
+      "tick": 240,
+      "day": 11,
+      "time": "15:00",
+      "kind": "work",
+      "text": "Back at the desk. Four good hours."
+    },
+    {
+      "tick": 264,
+      "day": 12,
+      "time": "08:30",
+      "kind": "life",
+      "text": "Coffee. The good kind now."
+    },
+    {
+      "tick": 264,
+      "day": 12,
+      "time": "09:00",
+      "kind": "work",
+      "text": "Building the timeline: every day of this room, scrubbable."
+    },
+    {
+      "tick": 264,
+      "day": 12,
+      "time": "11:00",
+      "kind": "work",
+      "text": "Watching day 1 turn into day 12 in two seconds is a strange feeling."
+    },
+    {
+      "tick": 288,
+      "day": 13,
+      "time": "09:10",
+      "kind": "life",
+      "text": "Work was skipping an old monitor. I asked. They said take it."
+    },
+    {
+      "tick": 288,
+      "day": 13,
+      "time": "10:40",
+      "kind": "life",
+      "text": "Carried it home on the bus with both arms. Worth it."
+    },
+    {
+      "tick": 288,
+      "day": 13,
+      "time": "15:00",
+      "kind": "work",
+      "text": "Two screens. Documentation on one, the thing I am building on the other."
+    },
+    {
+      "tick": 288,
+      "day": 13,
+      "time": "19:20",
+      "kind": "life",
+      "text": "Sat on the rug afterwards doing absolutely nothing."
+    },
+    {
+      "tick": 306,
+      "day": 14,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 14 began. Clear outside."
+    },
+    {
+      "tick": 309,
+      "day": 14,
+      "time": "03:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 311,
+      "day": 14,
+      "time": "05:40",
+      "kind": "body",
+      "text": "Made eggs and toast before sunrise because hunger had hit the ceiling."
+    },
+    {
+      "tick": 312,
+      "day": 14,
+      "time": "06:40",
+      "kind": "body",
+      "text": "Made oatmeal too because the first breakfast had barely made a dent."
+    },
+    {
+      "tick": 313,
+      "day": 14,
+      "time": "07:40",
+      "kind": "body",
+      "text": "Ate toast with peanut butter because hunger was still over the line."
+    },
+    {
+      "tick": 314,
+      "day": 14,
+      "time": "08:40",
+      "kind": "career",
+      "text": "Made Untitled playable for the first time: one square, one key, one narrowing band."
+    },
+    {
+      "tick": 315,
+      "day": 14,
+      "time": "09:40",
+      "kind": "body",
+      "text": "Closed Untitled and went back to bed when energy dropped below the line."
+    },
+    {
+      "tick": 316,
+      "day": 14,
+      "time": "10:40",
+      "kind": "body",
+      "text": "Made rice and eggs for an early lunch when hunger climbed back over the line."
+    },
+    {
+      "tick": 318,
+      "day": 14,
+      "time": "12:40",
+      "kind": "body",
+      "text": "Went back to bed when energy dropped below the line again."
+    },
+    {
+      "tick": 318,
+      "day": 14,
+      "time": "12:40",
+      "kind": "body",
+      "text": "Stayed in bed because energy was still below the line."
+    },
+    {
+      "tick": 330,
+      "day": 15,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 15 began. Clear outside."
+    },
+    {
+      "tick": 332,
+      "day": 15,
+      "time": "02:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 354,
+      "day": 16,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 16 began. Clear outside."
+    },
+    {
+      "tick": 356,
+      "day": 16,
+      "time": "02:40",
+      "kind": "body",
+      "text": "Got out of bed and ate a proper meal because hunger was at the ceiling and health had fallen to 38."
+    },
+    {
+      "tick": 359,
+      "day": 16,
+      "time": "05:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 359,
+      "day": 16,
+      "time": "05:40",
+      "kind": "body",
+      "text": "Stayed asleep because energy was still below the hard line."
+    },
+    {
+      "tick": 366,
+      "day": 16,
+      "time": "12:40",
+      "kind": "body",
+      "text": "Took a slow shower and changed into clean clothes because I still felt worn down."
+    },
+    {
+      "tick": 373,
+      "day": 16,
+      "time": "19:40",
+      "kind": "life",
+      "text": "Sat by the open window and watched the clear evening settle over the buildings."
+    },
+    {
+      "tick": 378,
+      "day": 17,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 17 began. Clear outside."
+    },
+    {
+      "tick": 384,
+      "day": 17,
+      "time": "06:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 402,
+      "day": 18,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 18 began. Storm outside."
+    },
+    {
+      "tick": 408,
+      "day": 18,
+      "time": "06:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 426,
+      "day": 19,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 19 began. Storm outside."
+    },
+    {
+      "tick": 433,
+      "day": 19,
+      "time": "07:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 449,
+      "day": 19,
+      "time": "23:40",
+      "kind": "body",
+      "text": "Made rice and eggs and ate a proper late dinner because hunger was at the ceiling and health was at zero."
+    },
+    {
+      "tick": 450,
+      "day": 20,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 20 began. Clear outside."
+    },
+    {
+      "tick": 462,
+      "day": 20,
+      "time": "12:40",
+      "kind": "body",
+      "text": "Got out of bed and rested in the armchair because sleep was full but health was still at zero."
+    }
   ]
 }
