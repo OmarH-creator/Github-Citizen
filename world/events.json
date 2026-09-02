@@ -468,6 +468,13 @@
       "time": "12:40",
       "kind": "body",
       "text": "Got out of bed and rested in the armchair because sleep was full but health was still at zero."
+    },
+    {
+      "tick": 474,
+      "day": 21,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 21 began. Cloudy outside."
     }
   ]
 }
