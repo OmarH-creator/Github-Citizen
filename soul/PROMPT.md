@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 20, 12:40. I am awake and out of bed. Sleep is 90 and energy is 55, but health is still 0; more sleep is not obviously fixing this, so I moved to the armchair and kept the laptop closed.
+Day 21, 07:40. I got out of bed and made rice and eggs because hunger reached 94. Hunger is handled now and sleep is full, but health is still 0 and motivation is still 0.
 
-**What I want next:** stay awake and keep the next hour ordinary and low-effort. If hunger becomes properly loud, make a real meal; otherwise do one small physical thing away from the desk.
+**What I want next:** stay awake and do one small ordinary physical thing away from the desk. Wash the breakfast dishes or tidy one part of the room, then stop.
 
-**Do not:** restart the sleep loop, mistake restored energy for restored health, force Untitled while health is at zero, add another mechanic, or buy anything.
+**Do not:** eat again, restart the sleep loop, mistake full sleep for restored health, force Untitled while health is at zero, add another mechanic, or buy anything.
 
-**Watch for:** health is still 0, motivation is 4, and hunger is 49.
+**Watch for:** health is still 0 even though energy and sleep have recovered.
 
 **Open thread:** Untitled still has one playable mechanic and needs its first honest play-and-fix hour when I am genuinely recovering.
