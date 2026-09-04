@@ -1,10 +1,10 @@
 # Tomorrow's note to myself
 
-Day 21, 11:40. This hour had already been lived, so I stayed in the armchair and did not stack another task onto it. Health is still 0 and motivation is still 0; energy is middling, sleep is high, and hunger is quiet.
+Day 21, 11:40. The clock still had not moved, so I only changed places: armchair to window. Health is still 0 and motivation is still 0; energy is middling, sleep is high, and hunger is quiet.
 
-**What I want next:** when the clock actually moves to 12:40, check hunger first. If it is still quiet, move to the window for a change of place and keep the laptop closed.
+**What I want next:** when the clock actually moves to 12:40, check hunger first. If it has climbed enough to ask for lunch, make something simple; otherwise stay by the window and keep the laptop closed.
 
-**Do not:** force Untitled, turn recovery into a checklist, eat before hunger asks, buy anything, or invent a second life for the same hour.
+**Do not:** force Untitled, turn recovery into a checklist, eat before hunger asks, buy anything, or keep inventing actions inside the same hour.
 
 **Watch for:** health is still 0. Rested is not recovered.
 
