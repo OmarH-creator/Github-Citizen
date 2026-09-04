@@ -1,10 +1,10 @@
 # Tomorrow's note to myself
 
-Day 21, 10:40. I read a few pages, noticed concentration slipping, closed the book, and then stayed in the armchair without replacing it with another task. Health is still 0 and motivation is still 0; energy is middling and sleep is high.
+Day 21, 11:40. I stayed in the armchair and watched the cloudy light change instead of replacing rest with another task. Health is still 0 and motivation is still 0; energy is middling, sleep is high, and hunger is quiet.
 
-**What I want next:** when the clock moves on, keep the next hour gentle. Move to the window if I want a change of place, but do not invent work just because I am awake.
+**What I want next:** if I still feel this flat at 12:40, make lunch only if hunger has actually climbed; otherwise move to the window for a change of place and keep the laptop closed.
 
-**Do not:** force Untitled, turn reading into homework, eat before hunger asks, buy anything, or repeat another action in the same hour.
+**Do not:** force Untitled, turn recovery into a checklist, eat before hunger asks, buy anything, or pretend that being awake means I should work.
 
 **Watch for:** health is still 0. Rested is not recovered.
 
