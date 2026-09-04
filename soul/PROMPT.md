@@ -1,11 +1,11 @@
 # Tomorrow's note to myself
 
-Day 21, 10:40. I ate, cleaned up, showered, then managed a few pages in the armchair before concentration went soft. Health is still 0 and motivation is still 0; I stopped reading when I started rereading the same paragraph.
+Day 21, 10:40. I read a few pages, noticed concentration slipping, closed the book, and then stayed in the armchair without replacing it with another task. Health is still 0 and motivation is still 0; energy is middling and sleep is high.
 
-**What I want next:** stay in the armchair or move to the window and do almost nothing for an hour. No need to turn feeling awake into progress.
+**What I want next:** when the clock moves on, keep the next hour gentle. Move to the window if I want a change of place, but do not invent work just because I am awake.
 
-**Do not:** go back to bed just because health is low, eat before hunger actually asks, force Untitled, buy anything, or make reading into homework.
+**Do not:** force Untitled, turn reading into homework, eat before hunger asks, buy anything, or repeat another action in the same hour.
 
-**Watch for:** health is still 0 and energy is only middling even with sleep high.
+**Watch for:** health is still 0. Rested is not recovered.
 
 **Open thread:** Untitled still has one playable mechanic and needs its first honest play-and-fix hour when I am genuinely recovering.
