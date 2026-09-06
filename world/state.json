@@ -59,20 +59,20 @@
     }
   },
   "clock": {
-    "tick": 497,
-    "day": 21,
-    "sim_time": "23:40",
-    "last_tick_utc": "2026-09-06T00:45:03Z",
+    "tick": 498,
+    "day": 22,
+    "sim_time": "00:40",
+    "last_tick_utc": "2026-09-06T05:42:11Z",
     "season": "autumn",
-    "weather": "cloudy"
+    "weather": "rain"
   },
   "physical": {
-    "energy": 10,
-    "hunger": 66,
+    "energy": 19,
+    "hunger": 67,
     "health": 0,
     "fitness": 40,
-    "sleep": 50,
-    "stress": 9
+    "sleep": 61,
+    "stress": 8
   },
   "emotional": {
     "mood": 49,
@@ -95,7 +95,7 @@
     "patience": 50
   },
   "finance": {
-    "savings": 274.94,
+    "savings": 267.08,
     "salary_monthly": 1400,
     "rent_monthly": 620,
     "food_weekly": 55,
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "watching the clouds",
-    "location": "window",
-    "since_tick": 485,
+    "current": "sleeping",
+    "location": "bed",
+    "since_tick": 498,
     "note": "Moved to the window and watched the low clouds without opening the laptop."
   },
   "interests": [
@@ -146,7 +146,7 @@
     "plants_owned": 1,
     "money_earned": 0,
     "projects_finished": 0,
-    "hours_slept": 59,
+    "hours_slept": 60,
     "ideas_saved": 4,
     "repos_visited": 6
   },

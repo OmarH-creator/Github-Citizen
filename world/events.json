@@ -517,6 +517,20 @@
       "time": "11:40",
       "kind": "life",
       "text": "Moved to the window and watched the low clouds without opening the laptop."
+    },
+    {
+      "tick": 498,
+      "day": 22,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 498,
+      "day": 22,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 22 began. Rain outside."
     }
   ]
 }
