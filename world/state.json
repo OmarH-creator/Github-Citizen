@@ -59,23 +59,23 @@
     }
   },
   "clock": {
-    "tick": 505,
+    "tick": 506,
     "day": 22,
-    "sim_time": "07:40",
-    "last_tick_utc": "2026-09-07T03:54:29Z",
+    "sim_time": "08:40",
+    "last_tick_utc": "2026-09-07T09:10:47Z",
     "season": "autumn",
     "weather": "rain"
   },
   "physical": {
-    "energy": 82,
-    "hunger": 74,
+    "energy": 79,
+    "hunger": 77,
     "health": 0,
     "fitness": 40,
-    "sleep": 100,
+    "sleep": 97,
     "stress": 0
   },
   "emotional": {
-    "mood": 49,
+    "mood": 47,
     "confidence": 61,
     "loneliness": 44,
     "curiosity": 83,
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "sleeping",
+    "current": "waking up",
     "location": "bed",
-    "since_tick": 498,
+    "since_tick": 506,
     "note": "Moved to the window and watched the low clouds without opening the laptop."
   },
   "interests": [
