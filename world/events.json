@@ -77,5 +77,6 @@
 {"tick":498,"day":22,"time":"00:40","kind":"heartbeat","text":"Day 22 began. Rain outside."},
 {"tick":522,"day":23,"time":"00:40","kind":"heartbeat","text":"Day 23 began. Cloudy outside."},
 {"tick":526,"day":23,"time":"04:40","kind":"heartbeat","text":"Ran out of energy and fell asleep without deciding to."},
-{"tick":526,"day":23,"time":"04:40","kind":"body","text":"Got out of bed long enough to make rice and eggs because hunger had reached the ceiling."}
+{"tick":526,"day":23,"time":"04:40","kind":"body","text":"Got out of bed long enough to make rice and eggs because hunger had reached the ceiling."},
+{"tick":526,"day":23,"time":"04:40","kind":"body","text":"Went back to bed after eating and left the predawn room quiet."}
 ]}
