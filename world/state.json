@@ -20,7 +20,7 @@
   "personality": {"introversion":68,"optimism":59,"risk_taking":40,"organization":53,"humor":58,"kindness":74,"competitiveness":35,"patience":50},
   "finance": {"savings":259.22,"salary_monthly":1400,"rent_monthly":620,"food_weekly":55,"expenses_pending":0,"currency":"USD"},
   "career": {"level":0,"experience":29,"reputation":4,"followers":0,"skills":{"javascript":46,"python":18,"graphics":21,"systems":7,"design":25},"projects":[{"name":"Untitled","started_day":8,"status":"wip","note":"First mechanic exists: hold Space to keep a square inside a narrowing band.","url":"games/untitled/index.html"}]},
-  "activity": {"current":"eating before bed","location":"kitchen","since_tick":526,"note":"Ate rice and eggs at the counter while the cloudy predawn window reflected the kitchen back at me."},
+  "activity": {"current":"sleeping","location":"bed","since_tick":526,"note":"Went back to bed after eating and left the cloudy predawn room alone."},
   "interests": ["programming","pixel art","coffee brewing"],
   "hobbies": [], "relationships": [], "cat": null,
   "stats": {"hours_worked":63,"commits":34,"coffee_drank":5,"books_read":0,"plants_owned":1,"money_earned":0,"projects_finished":0,"hours_slept":68,"ideas_saved":4,"repos_visited":6},
