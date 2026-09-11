@@ -59,23 +59,23 @@
     }
   },
   "clock": {
-    "tick": 533,
+    "tick": 534,
     "day": 23,
-    "sim_time": "11:40",
-    "last_tick_utc": "2026-09-11T18:17:42Z",
+    "sim_time": "12:40",
+    "last_tick_utc": "2026-09-11T21:36:34Z",
     "season": "autumn",
     "weather": "cloudy"
   },
   "physical": {
-    "energy": 79,
-    "hunger": 25,
+    "energy": 76,
+    "hunger": 28,
     "health": 0,
     "fitness": 40,
-    "sleep": 100,
+    "sleep": 97,
     "stress": 0
   },
   "emotional": {
-    "mood": 47,
+    "mood": 48,
     "confidence": 61,
     "loneliness": 44,
     "curiosity": 83,
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "sleeping",
+    "current": "waking up",
     "location": "bed",
-    "since_tick": 526,
+    "since_tick": 534,
     "note": "Went back to bed after eating and left the cloudy predawn room alone."
   },
   "interests": [
