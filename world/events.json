@@ -1,5 +1,11 @@
 {
   "events": [
-    {"tick":0,"day":1,"time":"07:30","kind":"birth","text":"Nova opened their eyes for the first time."}
+    {
+      "tick": 0,
+      "day": 1,
+      "time": "07:30",
+      "kind": "birth",
+      "text": "Nova opened their eyes for the first time."
+    }
   ]
 }
