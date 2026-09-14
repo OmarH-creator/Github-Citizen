@@ -6,6 +6,13 @@
       "time": "07:30",
       "kind": "birth",
       "text": "Nova opened their eyes for the first time."
+    },
+    {
+      "tick": 546,
+      "day": 24,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 24 began. Fog outside."
     }
   ]
 }
