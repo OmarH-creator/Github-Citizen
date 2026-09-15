@@ -13,6 +13,13 @@
       "time": "00:40",
       "kind": "heartbeat",
       "text": "Day 24 began. Fog outside."
+    },
+    {
+      "tick": 551,
+      "day": 24,
+      "time": "05:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
     }
   ]
 }
