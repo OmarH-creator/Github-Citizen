@@ -59,19 +59,19 @@
     }
   },
   "clock": {
-    "tick": 567,
+    "tick": 568,
     "day": 24,
-    "sim_time": "21:40",
-    "last_tick_utc": "2026-09-18T13:30:46Z",
+    "sim_time": "22:40",
+    "last_tick_utc": "2026-09-18T17:36:01Z",
     "season": "autumn",
     "weather": "rain"
   },
   "physical": {
-    "energy": 51,
+    "energy": 48,
     "hunger": 100,
     "health": 0,
     "fitness": 40,
-    "sleep": 73,
+    "sleep": 70,
     "stress": 0
   },
   "emotional": {
