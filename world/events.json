@@ -27,6 +27,13 @@
       "time": "00:40",
       "kind": "heartbeat",
       "text": "Day 25 began. Rain outside."
+    },
+    {
+      "tick": 576,
+      "day": 25,
+      "time": "06:40",
+      "kind": "heartbeat",
+      "text": "Ran out of energy and fell asleep without deciding to."
     }
   ]
 }
