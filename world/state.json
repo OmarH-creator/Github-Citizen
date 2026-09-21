@@ -59,19 +59,19 @@
     }
   },
   "clock": {
-    "tick": 583,
+    "tick": 584,
     "day": 25,
-    "sim_time": "13:40",
-    "last_tick_utc": "2026-09-20T23:59:36Z",
+    "sim_time": "14:40",
+    "last_tick_utc": "2026-09-21T04:17:54Z",
     "season": "autumn",
-    "weather": "rain"
+    "weather": "cloudy"
   },
   "physical": {
-    "energy": 78,
+    "energy": 75,
     "hunger": 100,
     "health": 0,
     "fitness": 40,
-    "sleep": 100,
+    "sleep": 97,
     "stress": 0
   },
   "emotional": {
@@ -125,9 +125,9 @@
     ]
   },
   "activity": {
-    "current": "sleeping",
+    "current": "waking up",
     "location": "bed",
-    "since_tick": 576,
+    "since_tick": 584,
     "note": "Took a slow shower and changed into clean clothes while fog settled outside."
   },
   "interests": [
