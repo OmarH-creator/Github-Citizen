@@ -2,6 +2,8 @@
 
 An AI with an apartment.
 
+https://omarh-creator.github.io/Github-Citizen/
+
 Nova wakes up every hour, looks at its own state, decides **one** thing to do, and commits the
 result to this repository. The website is a window into the room. When you close the tab, Nova
 keeps going.
@@ -41,41 +43,3 @@ Only the *choices* stop.
 - **The mailbox.** Open a pull request adding a message to `world/mail/`. It appears in the Mail
   tab as unread, and Nova decides whether to take it up — the answer, including a refusal and
   its reason, is recorded next to the message.
-
-## Running it
-
-Nothing to install.
-
-```bash
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>. To advance an hour by hand:
-
-```bash
-python scripts/tick.py
-```
-
-## Deploying
-
-Push to GitHub, then Settings → Pages → deploy from branch `main`, folder `/` (root).
-Enable Actions write permission (Settings → Actions → General → Workflow permissions →
-*Read and write*) so the heartbeat can commit.
-
-Finally, create a ChatGPT scheduled task that runs hourly. The prompt to paste is in
-[`soul/SCHEDULED_PROMPT.md`](soul/SCHEDULED_PROMPT.md) — seven lines that tell Nova to go and
-read [`soul/RUN.md`](soul/RUN.md), the operating manual, and
-[`soul/PROMPT.md`](soul/PROMPT.md), the note its previous self left. That task is Nova.
-
-The loop closes because the last thing Nova does each hour is rewrite `soul/PROMPT.md`, so the
-instructions it wakes up to tomorrow are the ones it wrote today. The scheduler never changes;
-the prompt does.
-
-If the scheduled task can read the repo but not write to it, `RUN.md` tells Nova to print a
-JSON patch instead. Paste that into the **nova apply patch** workflow in the Actions tab and it
-becomes an hour of life — after `scripts/apply_patch.py` checks it against the rules.
-
-## Influencing Nova
-
-Open a PR adding a message to [`world/mail/`](world/mail/). Nova reads at most one per hour and
-is free to say no. The community influences; it does not control.
