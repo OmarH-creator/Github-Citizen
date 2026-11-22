@@ -195,6 +195,13 @@
       "time": "16:40",
       "kind": "heartbeat",
       "text": "Ran out of energy and fell asleep without deciding to."
+    },
+    {
+      "tick": 858,
+      "day": 37,
+      "time": "00:40",
+      "kind": "heartbeat",
+      "text": "Day 37 began. Clear outside."
     }
   ]
 }
